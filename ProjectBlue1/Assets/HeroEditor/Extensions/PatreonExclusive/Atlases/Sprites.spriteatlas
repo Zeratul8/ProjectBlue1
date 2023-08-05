@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: cf3f0e851d7bc984d991da0ca816c732, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 433aed3015de59944abe9eb587320e5c, type: 3}
+  - {fileID: 21300000, guid: 3931e002abc5dbd40b4cfa49bf996f8d, type: 3}
+  - {fileID: 21300000, guid: fe155c83379faad41b9f52be9a74a148, type: 3}
+  - {fileID: 21300014, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300000, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300016, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300010, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300004, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300012, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300002, guid: 97d64ef4eac4fb4478e721b2cb741826, type: 3}
+  - {fileID: 21300014, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300000, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300016, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300010, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300004, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300012, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300002, guid: db3c4305405e72942a0d08044a129029, type: 3}
+  - {fileID: 21300014, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300000, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300016, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300010, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300004, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300012, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300002, guid: 400a73456d4c77f43a4eec48cb0047e0, type: 3}
+  - {fileID: 21300000, guid: 7f12ab55cdbb4ac47a1bfc6cc8077b9d, type: 3}
+  - {fileID: 21300000, guid: d3d2f3963ecebe447a198f3ac88a69d0, type: 3}
+  - {fileID: 21300000, guid: 0488d6c63c3b38e42bb2b42a92e0f5e4, type: 3}
+  - {fileID: 21300000, guid: fc3a10d6ed4ac534fa53e0c32b8d21c1, type: 3}
+  - {fileID: 21300000, guid: e6800bb8488bdc94587e58d7b28e52af, type: 3}
+  - {fileID: 21300002, guid: fc47faca8b2d01a4ab123dc92e950103, type: 3}
+  - {fileID: 21300000, guid: fc47faca8b2d01a4ab123dc92e950103, type: 3}
+  - {fileID: 21300004, guid: fc47faca8b2d01a4ab123dc92e950103, type: 3}
+  - {fileID: 21300000, guid: 176c5fab9c926c94c80ea6ed689dfc7b, type: 3}
+  - {fileID: 21300000, guid: 2fb3a6fbb66a56f418ad3f2cc31ada72, type: 3}
+  - {fileID: 21300000, guid: 9076d02c06d7e134bb88442751d55202, type: 3}
+  - {fileID: 21300000, guid: 799e4eccf99a30b4bbb9c8fc57c1599f, type: 3}
+  - {fileID: 21300000, guid: 1f565c4dfd45a5c4791069aad3865b79, type: 3}
+  - {fileID: 21300000, guid: 1f2315ddb9d83404f91ca1e581c46817, type: 3}
+  - {fileID: 21300000, guid: b6688ffe0c3183e4f8500c0e8cc0348d, type: 3}
+  - {fileID: 21300000, guid: 65c957ffadfba58499b4c7028de730c9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PatronGunAxe
+  - GreatLance
+  - EagleGreataxe
+  - Forestock
+  - Rifle
+  - Shell
+  - Bullet
+  - Ammo
+  - Slide
+  - Magazine
+  - Forestock
+  - Rifle
+  - Shell
+  - Bullet
+  - Ammo
+  - Slide
+  - Magazine
+  - Forestock
+  - Rifle
+  - Shell
+  - Bullet
+  - Ammo
+  - Slide
+  - Magazine
+  - BulkyShield
+  - FlameSword
+  - GunLance
+  - TwistedDagger
+  - BulkyHammer
+  - Limb
+  - Riser
+  - Arrow
+  - GreatShield
+  - CrystalicStaff
+  - DragonHead
+  - ReinforcedIronShield
+  - PhoenixWand
+  - SoulReaper
+  - MonsterShield
+  - BattleShield
+  m_RenderDataMap: {}
+  m_Tag: Sprites
+  m_IsVariant: 0

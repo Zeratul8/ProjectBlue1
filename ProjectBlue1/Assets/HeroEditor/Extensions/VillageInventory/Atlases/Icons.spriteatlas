@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 29a2c3cbff96d0845be96a7e08b85ea0, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: df65221095ddd9a4facf44deca7cf83b, type: 3}
+  - {fileID: 21300000, guid: df249c608c9ad574997b97ec895bbf64, type: 3}
+  - {fileID: 21300000, guid: 8298dea0360a3dd49810acdfa2e7301f, type: 3}
+  - {fileID: 21300000, guid: d78e44712f1e7184bb70a2b9d1222601, type: 3}
+  - {fileID: 21300000, guid: 69133612bc0590746bd2410121ad1210, type: 3}
+  - {fileID: 21300000, guid: 96a087a2947af1640bf5081c142ec049, type: 3}
+  - {fileID: 21300000, guid: f5b5751505f324c4fb5e50448c5effb7, type: 3}
+  - {fileID: 21300000, guid: 2578c416d5f581c4cbe16ea0b628624c, type: 3}
+  - {fileID: 21300000, guid: 268efa286a78f054cbbfdef34be3143d, type: 3}
+  - {fileID: 21300000, guid: 12ef0388497ea02418905431626a7cfd, type: 3}
+  - {fileID: 21300000, guid: a80f8ec8ca4709a4a9a0542cf84e073d, type: 3}
+  - {fileID: 21300000, guid: f44ab0f8cafcb54409bf3ca242c7a5db, type: 3}
+  - {fileID: 21300000, guid: 5c1d360a2a7ff2b4782fe7d4823f5039, type: 3}
+  - {fileID: 21300000, guid: f361a19c2e74af249a2f76d290d72f90, type: 3}
+  - {fileID: 21300000, guid: 645369ed23d7d314190c2197895eed25, type: 3}
+  - {fileID: 21300000, guid: f802fe1fbf3fef44c88a8418910c74fc, type: 3}
+  - {fileID: 21300000, guid: acf105ffed8dbd1479d1b66901e44e25, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SmallAxe
+  - Pan
+  - Scythe
+  - Sickle
+  - Poker
+  - WoodenStick
+  - Rake
+  - Crowbar
+  - Broom
+  - Hoe
+  - Saw
+  - Pitchfork
+  - PotGrip
+  - Showel
+  - Broomstick
+  - LumberjackAxe
+  - SmallHammer
+  m_RenderDataMap: {}
+  m_Tag: Icons
+  m_IsVariant: 0
