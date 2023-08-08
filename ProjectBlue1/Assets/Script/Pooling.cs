@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,16 +13,6 @@ public class Pooling : MonoBehaviour
     private List<GameObject> objs = new List<GameObject>();
     private int maxSize = 5;
 
-    public GameObject obj;
-    IEnumerator TestDef()
-    {
-        yield return new WaitForSecondsRealtime(2f);
-        obj = Get_Item();
-
-        yield return new WaitForSeconds(2f);
-
-        Return_Item(obj);
-    }
     private void Awake()
     {
         if(instance == null)
@@ -34,11 +25,6 @@ public class Pooling : MonoBehaviour
         }
 
         Init();
-    }
-    private void Update()
-    {
-
-        StartCoroutine(TestDef());
     }
     public void Init()
     {
@@ -56,7 +42,6 @@ public class Pooling : MonoBehaviour
         {
             if (!obj.activeSelf)
             {
-                objs.Remove(obj);
                 obj.SetActive(true);
                 return obj;
             }
@@ -66,7 +51,7 @@ public class Pooling : MonoBehaviour
     // 사용이 끝난 오브젝트 풀로 반환
     public void Return_Item(GameObject obj)
     {
+        obj.transform.localPosition = Vector3.zero;
         obj.SetActive(false);
-        objs.Add(obj);
     }
 }
