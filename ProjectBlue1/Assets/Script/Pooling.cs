@@ -1,57 +1,42 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class Pooling : MonoBehaviour
 {
-    public static Pooling instance;
+    // 풀에 담길 요소
+    public Object element;
 
-    public GameObject prefab;
-
-    private List<GameObject> objs = new List<GameObject>();
-    private int maxSize = 5;
+    private List<Object> pooling_list = new List<Object>();
+    public int maxSize = 5;
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         Init();
     }
     public void Init()
     {
         for(int i = 0; i < maxSize; i++)
         {
-            GameObject obj = Instantiate(prefab, gameObject.transform);
-            obj.SetActive(false);
-            objs.Add(obj);
+            pooling_list.Add(element);
         }
     }
     // 사용 가능한 오브젝트 얻기
-    public GameObject Get_Item()
+    public Object Get_Element()
     {
-        foreach(GameObject obj in objs)
-        {
-            if (!obj.activeSelf)
-            {
-                obj.SetActive(true);
-                return obj;
-            }
-        }
-        return null;
+        Object _element = pooling_list[^1]; // 마지막 요소 가져오기
+        pooling_list.RemoveAt(pooling_list.Count - 1);
+        return _element;
     }
     // 사용이 끝난 오브젝트 풀로 반환
-    public void Return_Item(GameObject obj)
+    public void Returned_Element(Object element)
     {
-        obj.transform.localPosition = Vector3.zero;
-        obj.SetActive(false);
+        pooling_list.Add(element);
+    }
+    // 더 이상 필요하지 않을 때 풀 파괴
+    public void Destroy_Pool()
+    {
+        Destroy(gameObject);
     }
 }
