@@ -11,10 +11,6 @@ public class Pooling : MonoBehaviour
     private List<Object> pooling_list = new List<Object>();
     public int maxSize = 5;
 
-    private void Awake()
-    {
-        Init();
-    }
     public void Init()
     {
         for(int i = 0; i < maxSize; i++)
@@ -24,9 +20,9 @@ public class Pooling : MonoBehaviour
     }
     // 사용 가능한 오브젝트 얻기
     public Object Get_Element()
-    {
+    { 
         Object _element = pooling_list[^1]; // 마지막 요소 가져오기
-        pooling_list.RemoveAt(pooling_list.Count - 1);
+        pooling_list.Remove(_element);
         return _element;
     }
     // 사용이 끝난 오브젝트 풀로 반환
