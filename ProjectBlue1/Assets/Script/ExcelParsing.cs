@@ -10,7 +10,7 @@ public class ExcelParsing : MonoBehaviour
 {
     [Header("Excel File Input")]
     public Object excelFile; // 엑셀 파일 퍼블릭으로 받기
-    public Status _states;
+    public List<Status> _states = new List<Status>();
 
     private void Start()
     {
@@ -38,12 +38,15 @@ public class ExcelParsing : MonoBehaviour
                             }*/
 
 
-                            // Status 변수에 데이터 삽입 ( 아직 해결 안됨 )
-                            _states.Attack = (float)result.Tables[i].Rows[j][0];
-                            print(_states.Attack);
-                            _states.Health = (float)result.Tables[i].Rows[j][1];
-                            _states.CriticalHit = (float)result.Tables[i].Rows[j][2];
-                            _states.CriticalDamage = (float)result.Tables[i].Rows[j][3];
+                            // Status 변수에 데이터 삽입
+
+                            Status status = new Status();
+                            status.Attack = float.Parse(result.Tables[i].Rows[j][0].ToString());
+                            status.Health = float.Parse(result.Tables[i].Rows[j][1].ToString());
+                            status.CriticalHit = float.Parse(result.Tables[i].Rows[j][2].ToString());
+                            status.CriticalDamage = float.Parse(result.Tables[i].Rows[j][3].ToString());
+
+                            _states.Add(status);
                         }
                     }
                 }
