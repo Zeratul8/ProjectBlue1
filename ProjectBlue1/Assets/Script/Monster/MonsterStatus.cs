@@ -8,14 +8,6 @@ public class MonsterStatus : MonoBehaviour
 
     List<Status> MonStats { get; set; }
 
-
-    private void Awake()
-    {
-        InitFirstStats();
-    }
-
-
-
     public void InitFirstStats()
     {
         ExcelParsing.ParseExcelStatData("MonsterStat", MonStats);
