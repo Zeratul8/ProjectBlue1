@@ -6,10 +6,6 @@ public class PlayerStatus : MonoBehaviour
 {
     public Status PlayerStat { get; set; }
     List<Status> PlayerStats { get; set; }
-    private void Awake()
-    {
-        InitFirstStats();
-    }
 
     public void InitFirstStats()
     {
