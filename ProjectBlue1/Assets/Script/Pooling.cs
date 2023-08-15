@@ -8,6 +8,7 @@ public class Pooling : MonoBehaviour
     // 풀에 담길 요소
     public Object element;
 
+    [SerializeField]
     private List<Object> pooling_list = new List<Object>();
     public int maxSize = 5;
 
@@ -15,7 +16,8 @@ public class Pooling : MonoBehaviour
     {
         for(int i = 0; i < maxSize; i++)
         {
-            pooling_list.Add(element);
+            Object obj = Instantiate(element);
+            pooling_list.Add(obj);
         }
     }
     // 사용 가능한 오브젝트 얻기
