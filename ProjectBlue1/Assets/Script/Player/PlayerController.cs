@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         stat = GetComponent<PlayerStatus>();
+        stat.InitFirstStats();
     }
 
     // Update is called once per frame
