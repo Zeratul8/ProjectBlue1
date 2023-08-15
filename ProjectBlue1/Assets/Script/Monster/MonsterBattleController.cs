@@ -12,16 +12,16 @@ public class MonsterBattleController : MonoBehaviour, IBattleController
         stat = GetComponent<MonsterStatus>();
     }
 
-    public void Attack()
+    public void Attack(float attack)
     {
         
     }
-    public void Damaged()
+    public void Damaged(float damage)
     {
-
+        stat.MonStat.Health -= damage;
     }
     public void Die()
     {
-
+        gameObject.SetActive(false);
     }
 }
