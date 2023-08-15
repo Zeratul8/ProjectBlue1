@@ -1,9 +1,6 @@
 using UnityEngine;
-using System.Data;
-using System;
 using System.IO;
 using ExcelDataReader;
-using Object = UnityEngine.Object;
 using System.Collections.Generic;
 
 public static class ExcelParsing
