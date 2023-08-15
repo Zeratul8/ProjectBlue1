@@ -1624,11 +1624,7 @@ MonoBehaviour:
   obj:
   - {fileID: 548035305}
   - {fileID: 1492191235}
-  view_obj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  view_obj: []
   index: 0
 --- !u!1 &574420358
 GameObject:
