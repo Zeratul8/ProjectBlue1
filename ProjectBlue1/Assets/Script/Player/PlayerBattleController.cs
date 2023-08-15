@@ -12,7 +12,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     }
     public void Attack(float attack)
     {
-        _monster.MonStat.Health -= attack;
+        
     }
     public void Damaged(float damage)
     {
@@ -22,7 +22,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     {
         if(stat.PlayerStat.Health <= 0)
         {
-            // 부활 처리
+            // 부활 처리 ? 스테이지 다시 시작?
         }
     }
 }
