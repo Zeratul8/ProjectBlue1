@@ -27,12 +27,13 @@ public static class ExcelParsing
 
 
                         // Status 변수에 데이터 삽입
+                        // Rows[j][0]은 Level 
                         Status status = new Status();
-                        status.Attack = float.Parse(result.Tables[i].Rows[j][0].ToString());
-                        status.Health = float.Parse(result.Tables[i].Rows[j][1].ToString());
-                        status.CriticalHit = float.Parse(result.Tables[i].Rows[j][2].ToString());
-                        status.CriticalDamage = float.Parse(result.Tables[i].Rows[j][3].ToString());
-                        status.AttackSpeed = float.Parse(result.Tables[i].Rows[j][4].ToString());
+                        status.Attack = float.Parse(result.Tables[i].Rows[j][1].ToString());
+                        status.Health = float.Parse(result.Tables[i].Rows[j][2].ToString());
+                        status.CriticalHit = float.Parse(result.Tables[i].Rows[j][3].ToString());
+                        status.CriticalDamage = float.Parse(result.Tables[i].Rows[j][4].ToString());
+                        status.AttackSpeed = float.Parse(result.Tables[i].Rows[j][5].ToString());
 
                         states.Add(status);
                     }

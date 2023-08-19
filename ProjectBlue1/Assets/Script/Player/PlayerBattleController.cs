@@ -19,7 +19,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     // 스텟 초기화
     public void StatInit()
     {
-
+        
     }
     // 게이지 채우기
     public void AttackSpeed_Bar()
@@ -34,9 +34,14 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
             attackSpeedBar.fillAmount += (1f/stat.PlayerStat.AttackSpeed) * Time.deltaTime;
         }
     }
-    public void Attack(float health)
+    public void Attack(ref float health)
     {
         health -= stat.PlayerStat.Attack;
+
+        /* 또는
+        반환값을 float으로 해두고
+        return health;
+        */
     }
     public void Damaged(float damage)
     {
