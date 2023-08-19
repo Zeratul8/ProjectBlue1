@@ -31,7 +31,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
         }
         else
         {
-            attackSpeedBar.fillAmount += stat.PlayerStat.AttackSpeed * Time.deltaTime;
+            attackSpeedBar.fillAmount += (1f/stat.PlayerStat.AttackSpeed) * Time.deltaTime;
         }
     }
     public void Attack(float health)
