@@ -32,6 +32,7 @@ public static class ExcelParsing
                         status.Health = float.Parse(result.Tables[i].Rows[j][1].ToString());
                         status.CriticalHit = float.Parse(result.Tables[i].Rows[j][2].ToString());
                         status.CriticalDamage = float.Parse(result.Tables[i].Rows[j][3].ToString());
+                        status.AttackSpeed = float.Parse(result.Tables[i].Rows[j][4].ToString());
 
                         states.Add(status);
                     }
@@ -76,4 +77,5 @@ public class Status
     public float Health;
     public float CriticalHit;
     public float CriticalDamage;
+    public float AttackSpeed;
 }
