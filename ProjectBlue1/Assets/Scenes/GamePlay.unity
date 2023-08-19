@@ -5754,6 +5754,8 @@ GameObject:
   - component: {fileID: 1899521956}
   - component: {fileID: 1899521955}
   - component: {fileID: 1899521957}
+  - component: {fileID: 1899521958}
+  - component: {fileID: 1899521959}
   m_Layer: 5
   m_Name: IMG_Player
   m_TagString: Untagged
@@ -5832,6 +5834,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531c2ca7f124cd4396aa55f05200e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1899521958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899521953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc4acbe0741f3f42891d8afdfe6df7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeedBar: {fileID: 353139217}
+--- !u!114 &1899521959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899521953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce934016c7f0a649a902174d3926e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmp_stats:
+  - {fileID: 311480258}
+  - {fileID: 1520584735}
+  - {fileID: 776087280}
+  - {fileID: 526266957}
 --- !u!1 &1906103518
 GameObject:
   m_ObjectHideFlags: 0
