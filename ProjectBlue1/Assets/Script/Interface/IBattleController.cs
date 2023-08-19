@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IBattleController
 {
-    void Attack(float attack);
+    void Attack(float health);
     void Damaged(float damage);
     void Die();
 }
