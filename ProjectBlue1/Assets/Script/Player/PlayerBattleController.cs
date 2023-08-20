@@ -34,14 +34,11 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
             attackSpeedBar.fillAmount += (1f/stat.PlayerStat.AttackSpeed) * Time.deltaTime;
         }
     }
-    public void Attack(ref float health)
+    public float Attack(float health)
     {
         health -= stat.PlayerStat.Attack;
 
-        /* 또는
-        반환값을 float으로 해두고
         return health;
-        */
     }
     public void Damaged(float damage)
     {
