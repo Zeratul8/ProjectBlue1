@@ -19,7 +19,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     // 스텟 초기화
     public void StatInit()
     {
-        
+        // 스텟을 현재 유저 정보를 가져와서 초기화 해야할거 같은데, 현재 유저 정보를 어떻게 가져와야 할지 모르겠습니당..
     }
     // 게이지 채우기
     public void AttackSpeed_Bar()
