@@ -8,6 +8,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     PlayerStatus stat;
 
     [SerializeField] private Image attackSpeedBar;
+    [SerializeField] private AnimationController _animator;
     private void Start()
     {
         stat = GetComponent<PlayerStatus>();
@@ -26,7 +27,8 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     {
         if(attackSpeedBar.fillAmount >= 1)
         {
-            Debug.Log("공격함!!");
+            _animator.Action_Animation("Slash");
+            Debug.Log("공격함!");
             attackSpeedBar.fillAmount = 0;
         }
         else

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MonsterBattleController : MonoBehaviour, IBattleController
+public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
     MonsterStatus stat;
 
