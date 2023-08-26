@@ -27,7 +27,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     {
         if(attackSpeedBar.fillAmount >= 1)
         {
-            _animator.Action_Animation("Slash");
+            _animator.Action_Animation();
             Debug.Log("°ø°ÝÇÔ!");
             attackSpeedBar.fillAmount = 0;
         }

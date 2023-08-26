@@ -15,15 +15,26 @@ public class AnimationController : MonoBehaviour
         _animator= GetComponent<Animator>();
     }
 
-    public void Action_Animation(string name, AniType type = AniType.Trigger, bool state = false)
+    // 몹 타입을 가져와서 해당 몹에 맞는 애니메이션을 사용함
+    public void Action_Animation(MonsterController.MonsterType mobType = MonsterController.MonsterType.None)
     {
-        switch (type)
+        string _mobType = mobType.ToString();
+        switch (_mobType)
         {
-            case AniType.Trigger:
-                _animator.SetTrigger(name);
+            case "Skeleton":
+                _animator.SetTrigger("Jab");
                 break;
-            case AniType.Bool:
-                _animator.SetBool(name, state);
+            case "SkeletonWarrior":
+                _animator.SetTrigger("Slash");
+                break;
+            case "SkeletonMage":
+                _animator.SetTrigger("Cast");
+                break;
+            case "SkeletonArchor":
+                _animator.SetTrigger("SimpleBowShot");
+                break;
+            default:
+                _animator.SetTrigger("Slash");
                 break;
         }
     }
