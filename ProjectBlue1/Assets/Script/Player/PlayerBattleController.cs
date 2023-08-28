@@ -7,7 +7,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
 {
     PlayerStatus stat;
 
-    [SerializeField] private Slider attackSpeedBar;
+    [SerializeField] private Image attackSpeedBar;
     [SerializeField] private AnimationController _animator;
     private void Start()
     {
@@ -25,16 +25,15 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     // 게이지 채우기
     public void AttackSpeed_Bar()
     {
-        // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
-        if(attackSpeedBar.value >= attackSpeedBar.maxValue)
+        if(attackSpeedBar.fillAmount >= 1)
         {
             _animator.Action_Animation();
             Debug.Log("공격함!");
-            attackSpeedBar.value = 0;
+            attackSpeedBar.fillAmount = 0;
         }
         else
         {
-            attackSpeedBar.value += (1f / stat.PlayerStat.AttackSpeed) * Time.deltaTime;
+            attackSpeedBar.fillAmount += (1f/stat.PlayerStat.AttackSpeed) * Time.deltaTime;
         }
     }
     public float Attack(float health)
