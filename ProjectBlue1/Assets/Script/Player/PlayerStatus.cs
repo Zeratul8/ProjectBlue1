@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public Status PlayerStat { get; set; }
-    List<Status> PlayerStats { get; set; } = new List<Status>();
+    public Status playerStat { get; set; }
+    List<Status> playerStats { get; set; } = new List<Status>();
     public void InitFirstStats()
     {
-        ExcelParsing.ParseExcelStatData("PlayerStat", PlayerStats);
+        ExcelParsing.ParseExcelStatData("PlayerStat", playerStats);
 
-        PlayerStat = PlayerStats[0];
+        playerStat = playerStats[0];
     }
 }
