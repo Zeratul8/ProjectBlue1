@@ -8,7 +8,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     PlayerStatus stat;
 
     [SerializeField] private Slider attackSpeedBar;
-    [SerializeField] private AnimationController _animator;
+    [SerializeField] private AnimationController aniController;
     private void Start()
     {
         stat = GetComponent<PlayerStatus>();
@@ -28,28 +28,28 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
         // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
         if(attackSpeedBar.value >= attackSpeedBar.maxValue)
         {
-            _animator.Action_Animation();
+            aniController.Action_Animation();
             Debug.Log("공격함!");
             attackSpeedBar.value = 0;
         }
         else
         {
-            attackSpeedBar.value += (1f / stat.PlayerStat.AttackSpeed) * Time.deltaTime;
+            attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) * Time.deltaTime;
         }
     }
     public float Attack(float health)
     {
-        health -= stat.PlayerStat.Attack;
+        health -= stat.playerStat.Attack;
 
         return health;
     }
     public void Damaged(float damage)
     {
-        stat.PlayerStat.Health -= damage;
+        stat.playerStat.Health -= damage;
     }
     public void Die()
     {
-        if(stat.PlayerStat.Health <= 0)
+        if(stat.playerStat.Health <= 0)
         {
             // 부활 처리 ? 스테이지 다시 시작?
         }
