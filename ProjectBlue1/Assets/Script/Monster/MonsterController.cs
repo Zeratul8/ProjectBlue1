@@ -21,6 +21,6 @@ public class MonsterController : MonoBehaviour
         {
             monStat = gameObject.AddComponent<MonsterStatus>();
         }
-        monStat.InitFirstStats();
+        //monStat.InitFirstStats();
     }
 }

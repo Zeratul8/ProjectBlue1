@@ -2,26 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
-    MonsterStatus stat;
+    //MonsterStatus stat;
+    PlayerStatus stat;
 
-    void Start()
+    [SerializeField] private Slider attackSpeedBar;
+    /*[SerializeField]*/
+    private AnimationController aniController;
+    private void Start()
     {
-        stat = GetComponent<MonsterStatus>();
+        stat = GetComponent<PlayerStatus>();
+        aniController = GetComponentInChildren<AnimationController>();
     }
 
-    public void Attack(float attack)
+    private void Update()
     {
-        
+        AttackSpeed_Bar();
+    }
+
+    public void Attack()
+    {
+        BattleManager.Instance.ProcessAttack(BattleManager.RoleType.Monster, 0.000001f);
     }
     public void Damaged(float damage)
     {
-        stat.MonStat.Health -= damage;
+        //stat.MonStat.Health -= damage;
+        stat.playerStat.Health -= damage;
+        Debug.Log("!!!!!!몬스터남은피 : " + stat.playerStat.Health + "!!!!!!");
+        if (stat.playerStat.Health <= 0)
+            Die();
     }
     public void Die()
     {
+        Debug.Log("!!!!!!몬스터가쥬것따!!!!!!!");
         gameObject.SetActive(false);
+    }
+
+
+    private void AttackSpeed_Bar()
+    {
+        // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
+        if (attackSpeedBar.value >= attackSpeedBar.maxValue)
+        {
+            aniController.Action_Animation();
+            Debug.Log("공격함!");
+            Attack();
+            attackSpeedBar.value = 0;
+        }
+        else
+        {
+            attackSpeedBar.value += (attackSpeedBar.maxValue / (stat.playerStat.AttackSpeed * 2)) * Time.deltaTime;
+        }
     }
 }

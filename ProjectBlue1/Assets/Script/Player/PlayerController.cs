@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     PlayerStatus stat;
 
-    public TextMeshProUGUI[] tmp_stats = new TextMeshProUGUI[4]; // 0 = 체력, 1 = 공격력, 2 = 치명 확률, 3 = 치명 피해
+    //public TextMeshProUGUI[] tmp_stats = new TextMeshProUGUI[4]; // 0 = 체력, 1 = 공격력, 2 = 치명 확률, 3 = 치명 피해
     void Awake()
     {
         stat = GetComponent<PlayerStatus>();
@@ -17,10 +17,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmp_stats[0].text = "현재 : " + FormatNumber(stat.PlayerStat.Health);
-        tmp_stats[1].text = "현재 : " + FormatNumber(stat.PlayerStat.Attack);
-        tmp_stats[2].text = "현재 : " + FormatNumber(stat.PlayerStat.CriticalHit);
-        tmp_stats[3].text = "현재 : " + FormatNumber(stat.PlayerStat.CriticalDamage);
+        /*tmp_stats[0].text = "현재 : " + FormatNumber(stat.playerStat.Health);
+        tmp_stats[1].text = "현재 : " + FormatNumber(stat.playerStat.Attack);
+        tmp_stats[2].text = "현재 : " + FormatNumber(stat.playerStat.CriticalHit);
+        tmp_stats[3].text = "현재 : " + FormatNumber(stat.playerStat.CriticalDamage);*/
     }
     string FormatNumber(float number)
     {

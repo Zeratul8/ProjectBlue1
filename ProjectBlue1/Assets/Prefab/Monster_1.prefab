@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4263892552550707067}
   - component: {fileID: 4518938560523826252}
   - component: {fileID: 8448554175791840937}
-  - component: {fileID: -5126337226628150514}
   - component: {fileID: 8646993020379129734}
   m_Layer: 5
   m_Name: Monster_1
@@ -78,18 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-5126337226628150514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8725594991432410713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ea549eb99971045a513072f87908cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &8646993020379129734
 BoxCollider2D:
   m_ObjectHideFlags: 0
