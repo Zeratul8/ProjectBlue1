@@ -4,37 +4,38 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public enum AniType
+    public enum AniName
     {
-        Trigger,
-        Bool
+        Jab,
+        Slash,
+        Cast,
+        SimpleBowShot
     }
-    public Animator _animator;
+    public Animator animator;
     void Start()
     {
-        _animator= GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // 몹 타입을 가져와서 해당 몹에 맞는 애니메이션을 사용함
     public void Action_Animation(MonsterController.MonsterType mobType = MonsterController.MonsterType.None)
     {
-        string _mobType = mobType.ToString();
-        switch (_mobType)
+        switch (mobType)
         {
-            case "Skeleton":
-                _animator.SetTrigger("Jab");
+            case MonsterController.MonsterType.Skeleton:
+                animator.SetTrigger("Jab");
                 break;
-            case "SkeletonWarrior":
-                _animator.SetTrigger("Slash");
+            case MonsterController.MonsterType.SkeletonWarrior:
+                animator.SetTrigger("Slash");
                 break;
-            case "SkeletonMage":
-                _animator.SetTrigger("Cast");
+            case MonsterController.MonsterType.SkeletonMage:
+                animator.SetTrigger("Cast");
                 break;
-            case "SkeletonArchor":
-                _animator.SetTrigger("SimpleBowShot");
+            case MonsterController.MonsterType.SkeletonArchor:
+                animator.SetTrigger("SimpleBowShot");
                 break;
             default:
-                _animator.SetTrigger("Slash");
+                animator.SetTrigger("Slash");
                 break;
         }
     }
