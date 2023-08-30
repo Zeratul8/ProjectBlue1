@@ -13,10 +13,10 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     {
         stat = GetComponent<PlayerStatus>();
         aniController = GetComponentInChildren<AnimationController>();
+        StartCoroutine(AttackSpeed_Bar());
     }
     private void Update()
     {
-        AttackSpeed_Bar();
     }
     // 스텟 초기화
     public void StatInit()
@@ -45,20 +45,23 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     }
 
 
-
-    private void AttackSpeed_Bar()
+    private IEnumerator AttackSpeed_Bar()
     {
-        // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
-        if (attackSpeedBar.value >= attackSpeedBar.maxValue)
+        while (true)
         {
-            aniController.Action_Animation();
-            Attack();
-            Debug.Log("공격함!");
-            attackSpeedBar.value = 0;
-        }
-        else
-        {
-            attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) * Time.deltaTime*5;
+            // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
+            if (attackSpeedBar.value >= attackSpeedBar.maxValue)
+            {
+                aniController.Action_Animation();
+                Attack();
+                Debug.Log("공격함!");
+                attackSpeedBar.value = 0;
+            }
+            else
+            {
+                attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) * Time.deltaTime;
+                yield return null;
+            }
         }
     }
 }
