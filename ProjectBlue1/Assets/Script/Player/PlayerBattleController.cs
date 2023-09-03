@@ -7,6 +7,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
 {
     PlayerStatus stat;
 
+    public ParticleSystem particleSystem;
     [SerializeField] private Slider attackSpeedBar;
     /*[SerializeField]*/ private AnimationController aniController;
     private void Start()

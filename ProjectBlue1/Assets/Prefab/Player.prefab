@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc4acbe0741f3f42891d8afdfe6df7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
   attackSpeedBar: {fileID: 6109531656214581506}
 --- !u!114 &5898102185863398400
 MonoBehaviour:

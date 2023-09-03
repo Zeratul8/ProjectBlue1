@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
+    public ParticleSystem particleSystem;
     //MonsterStatus stat;
     PlayerStatus stat;
 
@@ -36,6 +37,11 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     public void Die()
     {
         Debug.Log("!!!!!!몬스터가쥬것따!!!!!!!");
+        // 몬스터가 살아있을 때 한 번만 파티클 이펙트 발동
+        if (gameObject.activeSelf)
+        {
+            particleSystem.Play();
+        }
         gameObject.SetActive(false);
     }
 
@@ -54,7 +60,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
             }
             else
             {
-                attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) * Time.deltaTime;
+                attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) / 2 * Time.deltaTime;
                 yield return null;
             }
         }
