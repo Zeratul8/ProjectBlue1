@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
+    public MonsterController.MonsterType monType;
     public ParticleSystem particleSystem;
     //MonsterStatus stat;
     PlayerStatus stat;
@@ -53,7 +54,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
             // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
             if (attackSpeedBar.value >= attackSpeedBar.maxValue)
             {
-                aniController.Action_Animation();
+                aniController.Action_Animation(monType);
                 Attack();
                 Debug.Log("공격함!");
                 attackSpeedBar.value = 0;
