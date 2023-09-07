@@ -5009,6 +5009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ee0c1078f20344ab2ef821dc590de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!1 &55659661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,6 +5020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 55659662}
   - component: {fileID: 55659663}
+  - component: {fileID: 55659664}
   m_Layer: 0
   m_Name: SPR_BackGroundCenter
   m_TagString: Untagged
@@ -5089,10 +5091,23 @@ SpriteRenderer:
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &55659664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55659661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3819bac186c1e2c49bfe47d0cef9f6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &116571351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6451,6 +6466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477466496}
   - component: {fileID: 477466497}
+  - component: {fileID: 477466498}
   m_Layer: 0
   m_Name: SPR_BackGroundRight
   m_TagString: Untagged
@@ -6525,6 +6541,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &477466498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477466495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3819bac186c1e2c49bfe47d0cef9f6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &515119924
 GameObject:
   m_ObjectHideFlags: 0
@@ -14359,6 +14388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1464727541}
   - component: {fileID: 1464727542}
+  - component: {fileID: 1464727543}
   m_Layer: 0
   m_Name: SPR_BackGroundLeft
   m_TagString: Untagged
@@ -14433,6 +14463,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1464727543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464727540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3819bac186c1e2c49bfe47d0cef9f6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1469115397
 GameObject:
   m_ObjectHideFlags: 0
