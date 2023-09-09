@@ -37,4 +37,8 @@ public class PlayerController : MonoBehaviour
             return number.ToString();
         }
     }
+    public void ResetBattleCondition()
+    {
+        //여기에 플레이어 걸어가는 애니메이션 실행시켜야함
+    }
 }

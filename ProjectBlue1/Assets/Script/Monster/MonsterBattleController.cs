@@ -8,15 +8,15 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
     public MonsterController.MonsterType monType;
     public ParticleSystem particleSystem;
-    //MonsterStatus stat;
-    PlayerStatus stat;
+    MonsterStatus stat;
+
 
     [SerializeField] private Slider attackSpeedBar;
     /*[SerializeField]*/
     private AnimationController aniController;
     private void Start()
     {
-        stat = GetComponent<PlayerStatus>();
+        stat = GetComponent<MonsterStatus>();
         aniController = GetComponentInChildren<AnimationController>();
         
         StartCoroutine(AttackSpeed_Bar());
@@ -29,10 +29,9 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     }
     public void Damaged(float damage)
     {
-        //stat.MonStat.Health -= damage;
-        stat.playerStat.Health -= damage;
-        Debug.Log("!!!!!!몬스터남은피 : " + stat.playerStat.Health + "!!!!!!");
-        if (stat.playerStat.Health <= 0)
+        stat.MonStat.Health -= damage;
+        Debug.Log("!!!!!!몬스터남은피 : " + stat.MonStat.Health + "!!!!!!");
+        if (stat.MonStat.Health <= 0)
             Die();
     }
     public void Die()
@@ -43,7 +42,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
         {
             particleSystem.Play();
         }
-        gameObject.SetActive(false);
+        BattleManager.Instance.KillMonster();
     }
 
 
@@ -61,7 +60,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
             }
             else
             {
-                attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) / 2 * Time.deltaTime;
+                attackSpeedBar.value += (attackSpeedBar.maxValue / stat.MonStat.AttackSpeed) / 2 * Time.deltaTime;
                 yield return null;
             }
         }

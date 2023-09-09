@@ -14,7 +14,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     [SerializeField]
     PlayerController player;
     [SerializeField]
-    PlayerController monster;
+    MonsterController monster;
 
     PlayerBattleController playerBattle;
     MonsterBattleController monsterBattle;
@@ -23,15 +23,14 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
 
     private void Start()
     {
+        if(monster == null)
+        {
+            monster = MonsterPoolManager.Instance.GetMonster();
+        }
         //플레이어는 그대로, 몬스터만 풀에서 갱신해서 받아오게 바꾸기
         playerBattle = player.GetComponent<PlayerBattleController>();
         monsterBattle = monster.GetComponent<MonsterBattleController>();
-    }
-
-
-    private void Update()
-    {
-
+        
     }
 
     public void ProcessAttack(RoleType type, float attack)
@@ -50,5 +49,30 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
                 break;
         }
     }
-    
+
+    public void KillMonster()
+    {
+        EndStage();
+    }
+    public void EndStage()
+    {
+        GetBattleRewards();
+        player.ResetBattleCondition();
+        //MonsterPoolManager.Instance.SetMonster(monster);
+
+        //SetBattleMonster();
+    }
+    void GetBattleRewards()
+    {
+
+    }
+    void SetBattleMonster()
+    {
+        monster = MonsterPoolManager.Instance.GetMonster();
+        
+        //여기에 몬스터 걸어오는 애니메이션 실행시켜야함
+    }
+
+
+
 }

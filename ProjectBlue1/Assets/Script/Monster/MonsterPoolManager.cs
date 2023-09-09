@@ -1,3 +1,4 @@
+using Assets.HeroEditor.Common.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +26,19 @@ public class MonsterPoolManager : SingletonMonoBehaviour<MonsterPoolManager>
         monPool.maxSize = 10;
         monPool.element = monsterObj;
         monPool.Init();
+    }
+
+    //풀링 손봐야함..
+    public MonsterController GetMonster()
+    {
+        GameObject monster = (GameObject)monPool.Get_Element();
+        monster.SetActive(true);
+        return monster.GetComponent<MonsterController>();
+    }
+
+    public void SetMonster(MonsterController monster)
+    {
+        monster.gameObject.SetActive(false);
+        monPool.Returned_Element(monster);
     }
 }
