@@ -19,7 +19,7 @@ public class MonsterController : MonoBehaviour
         Max
     }
 
-    private void Start()
+    public void InitControlMonster()
     {
         if(TryGetComponent<MonsterStatus>(out monStat) == false)
         {
@@ -34,18 +34,20 @@ public class MonsterController : MonoBehaviour
 
     public void InitMonster()
     {
-        transform.position = new Vector3(6.9f, 0, 0);
-
+        transform.position = Constants.monsterPos;
+        StartCoroutine(Coroutine_MonsterWalk());
     }
+
 
     IEnumerator Coroutine_MonsterWalk()
     {
+        //애니메이션 여기다넣자
         Vector3 walkPos = new Vector3(-walkSpeed, 0, 0);
         while(true)
         {
             yield return null;
             transform.position += walkPos;
-            if (Mathf.Approximately(transform.position.x, 3.45f))
+            if (transform.position.x < 3.45f)
                 break;
         }
     }

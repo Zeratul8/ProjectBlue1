@@ -5,11 +5,18 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     public Status playerStat { get; set; }
-    List<Status> playerStats { get; set; } = new List<Status>();
+    
     public void InitFirstStats()
     {
-        ExcelParsing.ParseExcelStatData("PlayerStat", playerStats);
+        playerStat = DataManager.Instance.playerStats[0];
+    }
 
-        playerStat = playerStats[0];
+    public void LoadStatus()
+    {
+        playerStat.Attack = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack;
+        playerStat.Health = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health;
+        playerStat.CriticalHit = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
+        playerStat.CriticalDamage = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
+        playerStat.AttackSpeed = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
     }
 }

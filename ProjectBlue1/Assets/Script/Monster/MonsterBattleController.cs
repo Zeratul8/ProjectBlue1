@@ -8,17 +8,17 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
     public MonsterController.MonsterType monType;
     public ParticleSystem particleSystem;
+    [SerializeField]
     MonsterStatus stat;
 
 
     [SerializeField] private Slider attackSpeedBar;
     /*[SerializeField]*/
     private AnimationController aniController;
-    private void Start()
+    public void InitBattleMonster()
     {
-        stat = GetComponent<MonsterStatus>();
+        //stat = GetComponent<MonsterStatus>();
         aniController = GetComponentInChildren<AnimationController>();
-        
         StartCoroutine(AttackSpeed_Bar());
     }
 
@@ -42,7 +42,14 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
         {
             particleSystem.Play();
         }
+        StopAllCoroutines();
+        attackSpeedBar.value = 0;
         BattleManager.Instance.KillMonster();
+    }
+
+    public void StartBattleMonster()
+    {
+        
     }
 
 

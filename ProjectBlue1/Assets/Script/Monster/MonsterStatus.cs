@@ -6,11 +6,8 @@ public class MonsterStatus : MonoBehaviour
 {
     public Status MonStat {  get; set; }
 
-    List<Status> MonStats { get; set; } = new List<Status>();
-
     public void InitFirstStats()
     {
-        ExcelParsing.ParseExcelStatData("MonsterStat", MonStats);
-        MonStat = MonStats[0];
+        MonStat = DataManager.Instance.MonStats[0];
     }
 }

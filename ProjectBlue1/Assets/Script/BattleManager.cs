@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleManager : SingletonMonoBehaviour<BattleManager>
@@ -20,7 +21,11 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     MonsterBattleController monsterBattle;
 
     public bool isPlayerAttack = false;
-
+    private void Awake()
+    {
+        DataManager.Instance.InitMonsterData();
+        DataManager.Instance.InitPlayerData();
+    }
     private void Start()
     {
         if(monster == null)
@@ -30,7 +35,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         //플레이어는 그대로, 몬스터만 풀에서 갱신해서 받아오게 바꾸기
         playerBattle = player.GetComponent<PlayerBattleController>();
         monsterBattle = monster.GetComponent<MonsterBattleController>();
-        
+        StartBattle();
     }
 
     public void ProcessAttack(RoleType type, float attack)
@@ -50,6 +55,16 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         }
     }
 
+    public void StartBattle()
+    {
+        DataManager.Instance.InitPlayerData();
+        DataManager.Instance.InitMonsterData();
+        player.InitControlPlayer();
+        monster.InitControlMonster();
+        playerBattle.InitBattlePlayer();
+        monsterBattle.InitBattleMonster();
+    }
+
     public void KillMonster()
     {
         EndStage();
@@ -58,19 +73,21 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     {
         GetBattleRewards();
         player.ResetBattleCondition();
-        //MonsterPoolManager.Instance.SetMonster(monster);
+        SaveDatas.Data.etc.stage++;
+        MonsterPoolManager.Instance.SetMonster(monster);
 
-        //SetBattleMonster();
+        SetBattleMonster();
     }
     void GetBattleRewards()
     {
-
+        SaveDatas.Data.etc.gold += SaveDatas.Data.etc.stage;
     }
     void SetBattleMonster()
     {
         monster = MonsterPoolManager.Instance.GetMonster();
-        
-        //여기에 몬스터 걸어오는 애니메이션 실행시켜야함
+        monster.InitMonster();
+        monsterBattle = monster.GetComponent<MonsterBattleController>();
+        monsterBattle.InitBattleMonster();
     }
 
 

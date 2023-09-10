@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerBattleController : MonoBehaviour, IBattleController
 {
+    [SerializeField]
     PlayerStatus stat;
 
     public ParticleSystem particleSystem;
     [SerializeField] private Slider attackSpeedBar;
     /*[SerializeField]*/ private AnimationController aniController;
-    private void Start()
+    public void InitBattlePlayer()
     {
-        stat = GetComponent<PlayerStatus>();
+        
         aniController = GetComponentInChildren<AnimationController>();
         StartCoroutine(AttackSpeed_Bar());
-    }
-    private void Update()
-    {
     }
     // Ω∫≈› √ ±‚»≠
     public void StatInit()
