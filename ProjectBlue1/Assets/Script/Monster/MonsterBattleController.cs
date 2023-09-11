@@ -17,7 +17,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     private AnimationController aniController;
     public void InitBattleMonster()
     {
-        //stat = GetComponent<MonsterStatus>();
+        stat.InitFirstStats();
         aniController = GetComponentInChildren<AnimationController>();
         StartCoroutine(AttackSpeed_Bar());
     }

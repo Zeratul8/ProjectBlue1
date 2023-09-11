@@ -18,7 +18,6 @@ public class BackGroundMove : MonoBehaviour
         spriteRenderer = GetComponentsInChildren<SpriteRenderer>();
         // 이미지의 실제 너비
         spriteWidth = spriteRenderer[0].bounds.size.x;
-        Debug.Log(spriteWidth);
         firstPos = transform.position;
     }
 

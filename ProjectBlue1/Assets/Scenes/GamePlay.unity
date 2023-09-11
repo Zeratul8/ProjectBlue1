@@ -5616,7 +5616,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7402,7 +7402,7 @@ Transform:
   - {fileID: 713618982}
   - {fileID: 31911463}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713618981
 GameObject:
@@ -12341,7 +12341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &754107422
 PrefabInstance:
@@ -14616,7 +14616,7 @@ RectTransform:
   - {fileID: 2024466061}
   - {fileID: 680632163}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15662,7 +15662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713535442}
-  - component: {fileID: 1713535441}
+  - component: {fileID: 1713535443}
   m_Layer: 0
   m_Name: MonsterPool
   m_TagString: Untagged
@@ -15670,19 +15670,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1713535441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713535440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4912eb780c0534ebe6e5df37690450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterObj: {fileID: 526446183}
 --- !u!4 &1713535442
 Transform:
   m_ObjectHideFlags: 0
@@ -15699,6 +15686,19 @@ Transform:
   m_Father: {fileID: 683494676}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713535443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713535440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4912eb780c0534ebe6e5df37690450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterObj: {fileID: 526446183}
 --- !u!1 &1731108634
 GameObject:
   m_ObjectHideFlags: 0

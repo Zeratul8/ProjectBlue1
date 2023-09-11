@@ -21,7 +21,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     MonsterBattleController monsterBattle;
 
     public bool isPlayerAttack = false;
-    private void Awake()
+    protected override void OnAwake()
     {
         DataManager.Instance.InitMonsterData();
         DataManager.Instance.InitPlayerData();
@@ -33,11 +33,12 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
             monster = MonsterPoolManager.Instance.GetMonster();
         }
         //플레이어는 그대로, 몬스터만 풀에서 갱신해서 받아오게 바꾸기
+
         playerBattle = player.GetComponent<PlayerBattleController>();
         monsterBattle = monster.GetComponent<MonsterBattleController>();
+
         StartBattle();
     }
-
     public void ProcessAttack(RoleType type, float attack)
     {
         switch (type)

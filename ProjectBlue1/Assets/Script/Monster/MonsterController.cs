@@ -9,6 +9,9 @@ public class MonsterController : MonoBehaviour
     float walkSpeed;
 
     MonsterStatus monStat;
+
+    public MonsterType monType;
+    private AnimationController aniController;
     public enum MonsterType
     {
         None = -1,
@@ -18,7 +21,10 @@ public class MonsterController : MonoBehaviour
         SkeletonArchor,
         Max
     }
-
+    private void Start()
+    {
+        aniController = GetComponentInChildren<AnimationController>();
+    }
     public void InitControlMonster()
     {
         if(TryGetComponent<MonsterStatus>(out monStat) == false)
@@ -42,6 +48,8 @@ public class MonsterController : MonoBehaviour
     IEnumerator Coroutine_MonsterWalk()
     {
         //애니메이션 여기다넣자
+        aniController.Action_Animation(monType);
+
         Vector3 walkPos = new Vector3(-walkSpeed, 0, 0);
         while(true)
         {
