@@ -12,14 +12,16 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     MonsterStatus stat;
 
 
-    [SerializeField] private Slider attackSpeedBar;
+    [SerializeField]
+    private Slider attackSpeedBar;
+
     /*[SerializeField]*/
     private AnimationController aniController;
     public void InitBattleMonster()
     {
         stat.InitFirstStats();
+        Debug.Log(stat.MonStat.Health);
         aniController = GetComponentInChildren<AnimationController>();
-        StartCoroutine(AttackSpeed_Bar());
     }
 
 
@@ -53,7 +55,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     }
 
 
-    private IEnumerator AttackSpeed_Bar()
+    public IEnumerator AttackSpeed_Bar()
     {
         while (true)
         {

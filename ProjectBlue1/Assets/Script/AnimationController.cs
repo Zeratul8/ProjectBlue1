@@ -18,6 +18,8 @@ public class AnimationController : MonoBehaviour
     }
 
     // 몹 타입을 가져와서 해당 몹에 맞는 애니메이션을 사용함
+
+    // Upper 레이어 ( 공격 모션 관련 )
     public void Action_Animation(MonsterController.MonsterType mobType = MonsterController.MonsterType.None)
     {
         switch (mobType)
@@ -39,6 +41,7 @@ public class AnimationController : MonoBehaviour
                 break;
         }
     }
+    // Lower 레이어 ( 움직임 관련 )
     public void State_Animation(MonsterController.MonsterType mobType = MonsterController.MonsterType.None)
     {
         switch (mobType)
@@ -56,7 +59,7 @@ public class AnimationController : MonoBehaviour
                 //animator.SetTrigger("SimpleBowShot");
                 break;
             default:
-                animator.SetTrigger("Slash");
+                animator.SetInteger("State", 0);
                 break;
         }
     }
