@@ -41,7 +41,6 @@ public class MonsterController : MonoBehaviour
             gameObject.AddComponent<MonsterBattleController>();
         }
         monStat.InitFirstStats();
-        InitMonster();
     }
 
     public void InitMonster()

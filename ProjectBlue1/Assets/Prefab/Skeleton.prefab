@@ -718,7 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1
   monType: 0
-  aniController: {fileID: 0}
+  aniController: {fileID: 895342874}
 --- !u!114 &-488749562395642181
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -65,6 +65,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         monster.InitControlMonster();
         playerBattle.InitBattlePlayer();
         monsterBattle.InitBattleMonster();
+        monster.InitMonster();
     }
 
     public void KillMonster()
@@ -87,9 +88,9 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     void SetBattleMonster()
     {
         monster = MonsterPoolManager.Instance.GetMonster();
-        monster.InitMonster();
         monsterBattle = monster.GetComponent<MonsterBattleController>();
         monsterBattle.InitBattleMonster();
+        monster.InitMonster();
     }
 
 

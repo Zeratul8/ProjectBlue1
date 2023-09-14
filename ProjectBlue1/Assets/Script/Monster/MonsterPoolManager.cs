@@ -23,7 +23,6 @@ public class MonsterPoolManager : SingletonMonoBehaviour<MonsterPoolManager>
             monsterObj = new GameObject("Monster");
             monsterObj.AddComponent<MonsterController>();
         }
-        monsterObj.SetActive(false);
 
         monsterPool = new GameObjectPool<MonsterController>(5, () =>
         {
