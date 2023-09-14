@@ -15135,6 +15135,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1713535442}
     m_Modifications:
     - target: {fileID: -488749562395642181, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
+      propertyPath: monType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -488749562395642181, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 31911465}
@@ -44621,7 +44625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c12277143ae76e40b8a80fc02e7139e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monType: 0
   particleSystem: {fileID: 31911465}
   monsterCtr: {fileID: 0}
   stat: {fileID: 0}

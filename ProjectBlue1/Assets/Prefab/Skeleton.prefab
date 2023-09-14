@@ -731,7 +731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c12277143ae76e40b8a80fc02e7139e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monType: 0
   particleSystem: {fileID: 0}
   monsterCtr: {fileID: 1620989593}
   stat: {fileID: 6786232393244963775}
