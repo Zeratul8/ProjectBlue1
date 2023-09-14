@@ -60,6 +60,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     {
         DataManager.Instance.InitPlayerData();
         DataManager.Instance.InitMonsterData();
+        //monster = MonsterPoolManager.Instance.GetMonster();
         player.InitControlPlayer();
         monster.InitControlMonster();
         playerBattle.InitBattlePlayer();

@@ -6,22 +6,23 @@ using UnityEngine.UI;
 
 public class MonsterBattleController : MonoBehaviour//, IBattleController
 {
-    public MonsterController.MonsterType monType;
+    MonsterController.MonsterType monType;
     public ParticleSystem particleSystem;
+    [SerializeField]
+    MonsterController monsterCtr;
     [SerializeField]
     MonsterStatus stat;
 
 
     [SerializeField]
     private Slider attackSpeedBar;
-
-    /*[SerializeField]*/
-    private AnimationController aniController;
     public void InitBattleMonster()
     {
+        monType = monsterCtr.monType;
+        gameObject.SetActive(true);
+        transform.position = Constants.monsterPos;
         stat.InitFirstStats();
-        Debug.Log(stat.MonStat.Health);
-        aniController = GetComponentInChildren<AnimationController>();
+        StartCoroutine(AttackSpeed_Bar());
     }
 
 
@@ -49,11 +50,6 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
         BattleManager.Instance.KillMonster();
     }
 
-    public void StartBattleMonster()
-    {
-        
-    }
-
 
     public IEnumerator AttackSpeed_Bar()
     {
@@ -62,7 +58,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
             // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
             if (attackSpeedBar.value >= attackSpeedBar.maxValue)
             {
-                aniController.Action_Animation(monType);
+                monsterCtr.AttackAnimation(monType);
                 Attack();
                 Debug.Log("공격함!");
                 attackSpeedBar.value = 0;

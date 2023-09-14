@@ -41,12 +41,17 @@ public class MonsterController : MonoBehaviour
             gameObject.AddComponent<MonsterBattleController>();
         }
         monStat.InitFirstStats();
+        InitMonster();
     }
 
     public void InitMonster()
     {
-        transform.position = Constants.monsterPos;
         StartCoroutine(Coroutine_MonsterWalk());
+    }
+
+    public void AttackAnimation(MonsterType monType)
+    {
+        aniController.Attack_Animation(monType);
     }
 
 

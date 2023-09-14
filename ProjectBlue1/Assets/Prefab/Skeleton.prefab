@@ -717,6 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 1
+  monType: 0
+  aniController: {fileID: 0}
 --- !u!114 &-488749562395642181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,6 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monType: 0
   particleSystem: {fileID: 0}
+  monsterCtr: {fileID: 1620989593}
   stat: {fileID: 6786232393244963775}
   attackSpeedBar: {fileID: 5771883007873500433}
 --- !u!1 &1148429847025930

@@ -7,8 +7,19 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerStatus stat;
 
+    AnimationController animCtr;
+
+
+    public enum PlayerType
+    {
+        None = -1,
+        Warrior,
+        Archor,
+        Max
+    }
     public void InitControlPlayer()
     {
+        animCtr = GetComponentInChildren<AnimationController>();
         stat = GetComponent<PlayerStatus>();
         stat.InitFirstStats();
     }
@@ -28,6 +39,10 @@ public class PlayerController : MonoBehaviour
         {
             return number.ToString();
         }
+    }
+    public void AttackAnimation(PlayerType playerType)
+    {
+        animCtr.Attack_Animation(playerType);
     }
     public void ResetBattleCondition()
     {

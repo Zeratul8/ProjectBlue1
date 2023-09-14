@@ -728,7 +728,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc4acbe0741f3f42891d8afdfe6df7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 0}
+  playerType: 0
+  stat: {fileID: -6829234360345386450}
+  playerCtr: {fileID: 5898102185863398400}
   particleSystem: {fileID: 0}
   attackSpeedBar: {fileID: 6109531656214581506}
 --- !u!114 &5898102185863398400
@@ -743,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce934016c7f0a649a902174d3926e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 0}
+  stat: {fileID: -6829234360345386450}
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0

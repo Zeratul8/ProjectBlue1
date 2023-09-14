@@ -12403,10 +12403,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7032650265791795956, guid: e55c1a3a8dca0314485c5b1a862612a0, type: 3}
-      propertyPath: stat
-      value: 
-      objectReference: {fileID: 1998244246}
-    - target: {fileID: 7032650265791795956, guid: e55c1a3a8dca0314485c5b1a862612a0, type: 3}
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 713618984}
@@ -16508,17 +16504,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977725321}
   m_CullTransparentMesh: 1
---- !u!114 &1998244246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -6829234360345386450, guid: e55c1a3a8dca0314485c5b1a862612a0, type: 3}
-  m_PrefabInstance: {fileID: 754107422}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9531c2ca7f124cd4396aa55f05200e94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2024466060
 GameObject:
   m_ObjectHideFlags: 0
@@ -16860,7 +16845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc4acbe0741f3f42891d8afdfe6df7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerType: 0
   stat: {fileID: 0}
+  playerCtr: {fileID: 0}
   particleSystem: {fileID: 0}
   attackSpeedBar: {fileID: 3912907937277369821}
 --- !u!114 &1266606074860333171
@@ -44620,6 +44607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 0
+  monType: 0
+  aniController: {fileID: 0}
 --- !u!114 &8820005078001954211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44634,6 +44623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monType: 0
   particleSystem: {fileID: 31911465}
+  monsterCtr: {fileID: 0}
   stat: {fileID: 0}
   attackSpeedBar: {fileID: 3912907937277369821}
 --- !u!224 &9130697876581211160

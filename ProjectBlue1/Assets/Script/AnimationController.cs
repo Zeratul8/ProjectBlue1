@@ -20,7 +20,7 @@ public class AnimationController : MonoBehaviour
     // 몹 타입을 가져와서 해당 몹에 맞는 애니메이션을 사용함
 
     // Upper 레이어 ( 공격 모션 관련 )
-    public void Action_Animation(MonsterController.MonsterType mobType = MonsterController.MonsterType.None)
+    public void Attack_Animation(MonsterController.MonsterType mobType = MonsterController.MonsterType.None)
     {
         switch (mobType)
         {
@@ -37,7 +37,22 @@ public class AnimationController : MonoBehaviour
                 animator.SetTrigger("SimpleBowShot");
                 break;
             default:
+                Debug.Log("!!!!!AnimationController.Attack_Animation - 유효하지 않은 몬스터 타입!!!!" + gameObject.name);
+                break;
+        }
+    }
+    public void Attack_Animation(PlayerController.PlayerType playerType = PlayerController.PlayerType.Warrior)
+    {
+        switch (playerType)
+        {
+            case PlayerController.PlayerType.Warrior:
                 animator.SetTrigger("Slash");
+                break;
+            case PlayerController.PlayerType.Archor:
+                animator.SetTrigger("SimpleBowShot");
+                break;
+            default:
+                Debug.Log("!!!!!AnimationController.Attack_Animation - 유효하지 않은 플레이어 타입!!!!" + gameObject.name);
                 break;
         }
     }

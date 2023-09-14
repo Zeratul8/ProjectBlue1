@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class PlayerBattleController : MonoBehaviour, IBattleController
 {
     [SerializeField]
+    PlayerController.PlayerType playerType;
+    [SerializeField]
     PlayerStatus stat;
+    [SerializeField]
+    PlayerController playerCtr;
 
     public ParticleSystem particleSystem;
     [SerializeField] private Slider attackSpeedBar;
-    /*[SerializeField]*/ private AnimationController aniController;
     public void InitBattlePlayer()
     {
-        
-        aniController = GetComponentInChildren<AnimationController>();
         StartCoroutine(AttackSpeed_Bar());
     }
     // 스텟 초기화
@@ -51,7 +52,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
             // 현재 진행된 공격 속도 게이지가 최대가 되었다면 공격 후 0으로 초기화
             if (attackSpeedBar.value >= attackSpeedBar.maxValue)
             {
-                aniController.Action_Animation();
+                playerCtr.AttackAnimation(playerType);
                 Attack();
                 Debug.Log("공격함!");
                 attackSpeedBar.value = 0;
