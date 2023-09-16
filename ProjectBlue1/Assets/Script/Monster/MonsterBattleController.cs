@@ -20,7 +20,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     {
         monType = monsterCtr.monType;
         gameObject.SetActive(true);
-        transform.position = Constants.monsterPos;
+        //transform.position = Constants.monsterPos;
         stat.InitFirstStats();
         StartCoroutine(AttackSpeed_Bar());
     }
@@ -32,9 +32,9 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     }
     public void Damaged(float damage)
     {
-        stat.MonStat.Health -= damage;
-        Debug.Log("!!!!!!몬스터남은피 : " + stat.MonStat.Health + "!!!!!!");
-        if (stat.MonStat.Health <= 0)
+        stat.monsterHP -= damage;
+        Debug.Log("!!!!!!몬스터남은피 : " + stat.monsterHP + "!!!!!!");
+        if (stat.monsterHP <= 0)
             Die();
     }
     public void Die()
@@ -47,7 +47,8 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
         }
         StopAllCoroutines();
         attackSpeedBar.value = 0;
-        BattleManager.Instance.KillMonster();
+        //BattleManager.Instance.KillMonster();
+        BattleManager.Instance.SetBattleEnd();
     }
 
 

@@ -6603,7 +6603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 556254091}
-  monster: {fileID: 1620989593}
+  monster: {fileID: 0}
+  backGround: {fileID: 341112684}
   isPlayerAttack: 0
 --- !u!4 &515119926
 Transform:
@@ -15152,7 +15153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4305107873441922, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
       propertyPath: m_RootOrder
@@ -15200,7 +15201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5541981975494479853, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
@@ -15209,17 +15210,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4305107873441922, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
   m_PrefabInstance: {fileID: 1620989583}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1620989593 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1620989593, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
-  m_PrefabInstance: {fileID: 1620989583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526446183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5625b987615c30f46a81ffcd39a1c535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1632548925
 GameObject:
   m_ObjectHideFlags: 0
@@ -16986,6 +16976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat: {fileID: 0}
+  playerType: 0
 --- !u!114 &3912907937277369821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17114,6 +17105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531c2ca7f124cd4396aa55f05200e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHP: 0
 --- !u!224 &5139709521256585481
 RectTransform:
   m_ObjectHideFlags: 0

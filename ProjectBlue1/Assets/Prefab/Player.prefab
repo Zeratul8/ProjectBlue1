@@ -716,6 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531c2ca7f124cd4396aa55f05200e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHP: 0
 --- !u!114 &7032650265791795956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,6 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat: {fileID: -6829234360345386450}
+  playerType: 0
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0

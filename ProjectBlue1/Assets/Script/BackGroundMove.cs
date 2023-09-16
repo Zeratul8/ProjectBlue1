@@ -18,6 +18,7 @@ public class BackGroundMove : MonoBehaviour
         spriteRenderer = GetComponentsInChildren<SpriteRenderer>();
         // 이미지의 실제 너비
         spriteWidth = spriteRenderer[0].bounds.size.x;
+        speed = spriteWidth / (Constants.monsterWalkDistance / Constants.monsterWalkSpeed);
         firstPos = transform.position;
     }
 
@@ -25,13 +26,17 @@ public class BackGroundMove : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A))
         {
-            BackGroundScrolling();
+            StartBackGroundScrolling();
         }
     }
 
-    public void BackGroundScrolling()
+    public void StartBackGroundScrolling()
     {
         StartCoroutine(BackGround_Scrolling());
+    }
+    public void StopBackGroundScrolling()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator BackGround_Scrolling()
@@ -39,13 +44,14 @@ public class BackGroundMove : MonoBehaviour
 
         while (true)
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            //transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
 
             // 현재 x 값이 이미지의 너비만큼 왼쪽으로 이동했다면 이미지의 2배만큼 더해서 우측으로 이동
             if (transform.position.x < -spriteWidth)
             {
-                transform.position += new Vector3(spriteWidth, 0, 0);
-                break;
+                transform.position += new Vector3(spriteWidth * 2, 0, 0);
+                //break;
             }
 
             yield return null;

@@ -16,6 +16,8 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     [SerializeField] private Slider attackSpeedBar;
     public void InitBattlePlayer()
     {
+        StopAllCoroutines();
+        playerCtr.StopWalkPlayer();
         StartCoroutine(AttackSpeed_Bar());
     }
     // 스텟 초기화
@@ -31,17 +33,21 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     }
     public void Damaged(float damage)
     {
-        stat.playerStat.Health -= damage;
-        if (stat.playerStat.Health < 0)
+        stat.playerHP -= damage;
+        if (stat.playerHP < 0)
             Die();
     }
     public void Die()
     {
-        if(stat.playerStat.Health <= 0)
+        if(stat.playerHP <= 0)
         {
             Debug.Log("!!!!!!플레이어가 쥬것따!!!!!!");
             // 부활 처리 ? 스테이지 다시 시작?
         }
+    }
+    public void EndBattlePlayer()
+    {
+        StopAllCoroutines();
     }
 
 

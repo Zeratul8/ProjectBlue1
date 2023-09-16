@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     public Status playerStat { get; set; }
+    public float playerHP;
     
     public void InitFirstStats()
     {
         playerStat = DataManager.Instance.playerStats[0];
+        playerHP = playerStat.Health;
     }
 
     public void LoadStatus()

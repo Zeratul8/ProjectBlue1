@@ -12,13 +12,28 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         Monster,
         Max
     }
+    enum BattleState
+    {
+        None,
+        InitBattle,
+        MonsterReady,
+        MonsterWait,
+        StartBattle,
+        PlayBattle,
+        EndBattle,
+        Max
+    }
     [SerializeField]
     PlayerController player;
     [SerializeField]
     MonsterController monster;
+    [SerializeField]
+    BackGroundMove backGround;
 
     PlayerBattleController playerBattle;
     MonsterBattleController monsterBattle;
+
+    BattleState battleState = BattleState.InitBattle;
 
     public bool isPlayerAttack = false;
     protected override void OnAwake()
@@ -28,7 +43,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     }
     private void Start()
     {
-        if(monster == null)
+        if (monster == null)
         {
             monster = MonsterPoolManager.Instance.GetMonster();
         }
@@ -37,7 +52,33 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         playerBattle = player.GetComponent<PlayerBattleController>();
         monsterBattle = monster.GetComponent<MonsterBattleController>();
 
-        StartBattle();
+        
+    }
+    private void Update()
+    {
+        switch (battleState)
+        {
+            case BattleState.InitBattle:
+                InitBattle();
+                battleState = BattleState.MonsterReady;
+                break;
+            case BattleState.MonsterReady:
+                SetBattleMonster();
+                battleState= BattleState.MonsterWait;
+                break;
+            case BattleState.MonsterWait:
+                break;
+            case BattleState.StartBattle:
+                StartBattle();
+                battleState = BattleState.PlayBattle;
+                break;
+            case BattleState.PlayBattle:
+                break;
+            case BattleState.EndBattle:
+                KillMonster();
+                break;
+
+        }
     }
     public void ProcessAttack(RoleType type, float attack)
     {
@@ -56,16 +97,33 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         }
     }
 
-    public void StartBattle()
+    public void SetBattleStart()
+    {
+        battleState = BattleState.StartBattle;
+    }
+    public void SetBattleEnd()
+    {
+        battleState = BattleState.EndBattle;
+    }
+
+    public void InitBattle()
     {
         DataManager.Instance.InitPlayerData();
         DataManager.Instance.InitMonsterData();
         //monster = MonsterPoolManager.Instance.GetMonster();
         player.InitControlPlayer();
         monster.InitControlMonster();
-        playerBattle.InitBattlePlayer();
+        
+        //playerBattle.InitBattlePlayer();
+        //monsterBattle.InitBattleMonster();
+        //monster.InitMonster();
+    }
+
+    public void StartBattle()
+    {
         monsterBattle.InitBattleMonster();
-        monster.InitMonster();
+        playerBattle.InitBattlePlayer();
+        backGround.StopBackGroundScrolling();
     }
 
     public void KillMonster()
@@ -75,22 +133,29 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     public void EndStage()
     {
         GetBattleRewards();
-        player.ResetBattleCondition();
+        player.ResetBattleCondition(player.playerType);
+        playerBattle.EndBattlePlayer();
         SaveDatas.Data.etc.stage++;
+        UIManager.Instance.SetStateText();
         MonsterPoolManager.Instance.SetMonster(monster);
+        monster = null;
 
-        SetBattleMonster();
+        battleState = BattleState.MonsterReady;
     }
     void GetBattleRewards()
     {
         SaveDatas.Data.etc.gold += SaveDatas.Data.etc.stage;
+        UIManager.Instance.SetGoldText();
     }
     void SetBattleMonster()
     {
-        monster = MonsterPoolManager.Instance.GetMonster();
+        if(monster == null)
+            monster = MonsterPoolManager.Instance.GetMonster();
+        monster.InitControlMonster();
         monsterBattle = monster.GetComponent<MonsterBattleController>();
-        monsterBattle.InitBattleMonster();
+        //monsterBattle.InitBattleMonster();
         monster.InitMonster();
+        backGround.StartBackGroundScrolling();
     }
 
 

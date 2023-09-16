@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerStatus stat;
 
+    public PlayerType playerType;
+
     AnimationController animCtr;
 
 
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         animCtr = GetComponentInChildren<AnimationController>();
         stat = GetComponent<PlayerStatus>();
         stat.InitFirstStats();
+        ResetBattleCondition(playerType);
     }
 
  
@@ -44,8 +47,15 @@ public class PlayerController : MonoBehaviour
     {
         animCtr.Attack_Animation(playerType);
     }
-    public void ResetBattleCondition()
+    public void ResetBattleCondition(PlayerType playerType)
     {
         //여기에 플레이어 걸어가는 애니메이션 실행시켜야함
+        animCtr.State_Animation(playerType);
     }
+    public void StopWalkPlayer()
+    {
+        animCtr.StopWalk_Animation();
+    }
+
+    
 }

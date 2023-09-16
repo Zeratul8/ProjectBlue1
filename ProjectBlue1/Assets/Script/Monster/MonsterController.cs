@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
-    [SerializeField]
-    float walkSpeed;
 
     MonsterStatus monStat;
     MonsterBattleController monsterBattle;
@@ -59,7 +57,7 @@ public class MonsterController : MonoBehaviour
         //애니메이션 여기다넣자
         aniController.State_Animation(monType);
 
-        Vector3 walkPos = new Vector3(-walkSpeed, 0, 0);
+        Vector3 walkPos = new Vector3(-Constants.monsterWalkSpeed, 0, 0) * Time.deltaTime;
         while(true)
         {
             yield return null;
@@ -67,8 +65,9 @@ public class MonsterController : MonoBehaviour
             if (transform.position.x < 3.45f)
             {
                 // 위치에 도달했을 때 움직임을 멈추고 플레이어를 공격함
-                aniController.State_Animation();
-                StartCoroutine(monsterBattle.AttackSpeed_Bar());
+                aniController.StopWalk_Animation();
+                //StartCoroutine(monsterBattle.AttackSpeed_Bar());
+                BattleManager.Instance.SetBattleStart();
                 break;
             }
         }

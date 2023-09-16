@@ -78,4 +78,21 @@ public class AnimationController : MonoBehaviour
                 break;
         }
     }
+
+    public void State_Animation(PlayerController.PlayerType playerType = PlayerController.PlayerType.Warrior)
+    {
+        switch(playerType)
+        {
+            case PlayerController.PlayerType.Warrior:
+                animator.SetInteger("State", 2);
+                break;
+            default:
+                Debug.Log("!!!!!AnimationController.State_Animation - 유효하지 않은 플레이어 타입!!!!" + gameObject.name);
+                break;
+        }
+    }
+    public void StopWalk_Animation()
+    {
+        animator.SetInteger("State", 0);
+    }
 }
