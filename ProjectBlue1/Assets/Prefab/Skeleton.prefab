@@ -717,7 +717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5625b987615c30f46a81ffcd39a1c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
   monType: 0
   aniController: {fileID: 895342874}
 --- !u!114 &-488749562395642181

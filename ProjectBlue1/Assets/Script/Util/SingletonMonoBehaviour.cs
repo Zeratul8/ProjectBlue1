@@ -28,4 +28,8 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBe
             OnStart();
         }
     }
+    private void OnDestroy()
+    {
+        Destroy(Instance);
+    }
 }

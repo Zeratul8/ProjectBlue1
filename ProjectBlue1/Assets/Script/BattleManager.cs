@@ -40,6 +40,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     {
         DataManager.Instance.InitMonsterData();
         DataManager.Instance.InitPlayerData();
+        SaveDatas.Load();
     }
     private void Start()
     {
@@ -97,6 +98,11 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         }
     }
 
+    public void SetPlayerStat()
+    {
+        playerBattle.SetPlayerStat();
+    }
+
     public void SetBattleStart()
     {
         battleState = BattleState.StartBattle;
@@ -113,7 +119,8 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         //monster = MonsterPoolManager.Instance.GetMonster();
         player.InitControlPlayer();
         monster.InitControlMonster();
-        
+
+        playerBattle.SetPlayerStat();
         //playerBattle.InitBattlePlayer();
         //monsterBattle.InitBattleMonster();
         //monster.InitMonster();

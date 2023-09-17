@@ -31,7 +31,7 @@ public static class SaveDatas
     //서버 수동,자동세이브 넣을예정
     //[ContextMenu("Save")]
     [MenuItem("Test/Save")]
-    private static void Save()
+    public static void Save()
     {
         stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
         //게임데이터 여기다 불러와야함!
@@ -44,7 +44,7 @@ public static class SaveDatas
     }
     //[ContextMenu("Load")]
     [MenuItem("Test/Load")]
-    private static void Load()
+    public static void Load()
     {
         stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
         if(!File.Exists(savePath))

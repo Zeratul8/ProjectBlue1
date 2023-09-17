@@ -5084,7 +5084,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2437969a2b17b41b0a10bef95252a284, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -12803,6 +12803,7 @@ GameObject:
   - component: {fileID: 809372611}
   - component: {fileID: 809372613}
   - component: {fileID: 809372612}
+  - component: {fileID: 809372614}
   m_Layer: 5
   m_Name: CriticalHit
   m_TagString: Untagged
@@ -12873,6 +12874,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809372610}
   m_CullTransparentMesh: 1
+--- !u!114 &809372614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809372610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1350c6b18d1a894fa68db52ac81655a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  levelText: {fileID: 1906103520}
+  statText: {fileID: 776087280}
+  costText: {fileID: 891529064}
+  upgradeBtn: {fileID: 171873566}
 --- !u!1 &832090098
 GameObject:
   m_ObjectHideFlags: 0
@@ -14034,6 +14052,7 @@ GameObject:
   - component: {fileID: 1347326688}
   - component: {fileID: 1347326690}
   - component: {fileID: 1347326689}
+  - component: {fileID: 1347326691}
   m_Layer: 5
   m_Name: CriticalDamage
   m_TagString: Untagged
@@ -14104,6 +14123,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347326687}
   m_CullTransparentMesh: 1
+--- !u!114 &1347326691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347326687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1350c6b18d1a894fa68db52ac81655a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  levelText: {fileID: 766099397}
+  statText: {fileID: 526266957}
+  costText: {fileID: 1676124799}
+  upgradeBtn: {fileID: 1731108636}
 --- !u!1 &1415246447
 GameObject:
   m_ObjectHideFlags: 0
@@ -15145,7 +15181,7 @@ PrefabInstance:
       objectReference: {fileID: 31911465}
     - target: {fileID: 1620989593, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
       propertyPath: walkSpeed
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: ff1db68db4d81324a82b8e57c5970802, type: 3}
       propertyPath: m_Name
@@ -15357,6 +15393,7 @@ GameObject:
   - component: {fileID: 1674182928}
   - component: {fileID: 1674182930}
   - component: {fileID: 1674182929}
+  - component: {fileID: 1674182931}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -15427,6 +15464,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674182927}
   m_CullTransparentMesh: 1
+--- !u!114 &1674182931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674182927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1350c6b18d1a894fa68db52ac81655a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  levelText: {fileID: 152632170}
+  statText: {fileID: 311480258}
+  costText: {fileID: 1610966494}
+  upgradeBtn: {fileID: 1894088529}
 --- !u!1 &1676124797
 GameObject:
   m_ObjectHideFlags: 0
@@ -15573,6 +15627,7 @@ GameObject:
   - component: {fileID: 1711475662}
   - component: {fileID: 1711475664}
   - component: {fileID: 1711475663}
+  - component: {fileID: 1711475665}
   m_Layer: 5
   m_Name: Attack
   m_TagString: Untagged
@@ -15643,6 +15698,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711475661}
   m_CullTransparentMesh: 1
+--- !u!114 &1711475665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711475661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1350c6b18d1a894fa68db52ac81655a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  levelText: {fileID: 631561879}
+  statText: {fileID: 1520584735}
+  costText: {fileID: 599334168}
+  upgradeBtn: {fileID: 436351110}
 --- !u!1 &1713535440
 GameObject:
   m_ObjectHideFlags: 0
@@ -16286,6 +16358,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1938803015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938803017}
+  - component: {fileID: 1938803016}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1938803016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938803015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e36d14e0096064fb40de28de6f5e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageText: {fileID: 1816161178}
+  goldText: {fileID: 1227401713}
+  attackCtr: {fileID: 1711475665}
+  healthCtr: {fileID: 1674182931}
+  criHitCtr: {fileID: 809372614}
+  criDmgCtr: {fileID: 1347326691}
+  attackSpeedCtr: {fileID: 0}
+--- !u!4 &1938803017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938803015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.6174016, y: 2.2354617, z: 0.31607038}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970384818
 GameObject:
@@ -44602,7 +44725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5625b987615c30f46a81ffcd39a1c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0
   monType: 0
   aniController: {fileID: 0}
 --- !u!114 &8820005078001954211
