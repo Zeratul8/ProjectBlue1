@@ -59,7 +59,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     }
     public void SetGoldText()
     {
-        goldText.text = SaveDatas.Data.etc.gold.ToString();
+        goldText.text = SaveDatas.Data.etc.gold.ToString("F2");
     }
 
     public void NotEnoughGoldPopup()
@@ -122,26 +122,31 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
     public void UpgradeStat(StatType type)
     {
-        
+        // 골드 소모 코드 추가함
         switch(type)
         {
             case StatType.Attack:
+                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Cost;
                 SaveDatas.Data.stat.AttackLv++;
                 attackCtr.SetText();
                 break;
             case StatType.Health:
+                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Cost;
                 SaveDatas.Data.stat.HealthLv++;
                 healthCtr.SetText();
                 break;
             case StatType.CriHit:
+                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].Cost;
                 SaveDatas.Data.stat.CriticalHitLv++;
                 criHitCtr.SetText();
                 break;
             case StatType.CriDmg:
+                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost;
                 SaveDatas.Data.stat.CriticalDamageLV++;
                 criDmgCtr.SetText();
                 break;
             case StatType.AttackSpeed:
+                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost;
                 SaveDatas.Data.stat.AttackSpeedLv++;
                 attackSpeedCtr.SetText();
                 break;
@@ -151,5 +156,6 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
         }
         BattleManager.Instance.SetPlayerStat();
+        SetGoldText();
     }
 }
