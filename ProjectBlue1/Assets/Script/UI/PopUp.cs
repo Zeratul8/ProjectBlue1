@@ -14,10 +14,14 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         Max
     }
     private bool isPopup;
+    // twoObj에서 '네'가 눌렸다면 true
+    public bool isAccept;
+
     private PopUpType selectedType;
 
     [SerializeField]
     public Button panelBtn;
+    private Button acceptBtn;
 
     private GameObject oneObj;
     private GameObject twoObj;
@@ -30,15 +34,22 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         panelBtn.gameObject.SetActive(false);
         oneObj = panelBtn.gameObject.transform.Find("IMG_OneBtn").gameObject;
         twoObj = panelBtn.gameObject.transform.Find("IMG_TwoBtn").gameObject;
+        acceptBtn = twoObj.transform.Find("BTN_Yes").GetComponent<Button>();
         oneObj.SetActive(false);
         twoObj.SetActive(false);
-        panelBtn.onClick.AddListener(()=> { panelBtn.gameObject.SetActive(false); PopUpSwitch(selectedType); });
+
+        // 패널 false, 현재 열린 팝업 false
+        panelBtn.onClick.AddListener(()=> ClosePopUp());
+        // '네' 를 클릭하면 isAccept = true
+        acceptBtn.onClick.AddListener(() => { ClosePopUp(); isAccept = true; });
+        // '확인', '아니오'를 누르면 버튼 컴포넌트에 있는 OnClick 이벤트로 ClosePopUp 실행
     }
     private void OnDestroy()
     {
         panelBtn.onClick.RemoveAllListeners();
     }
-    private void Update()
+    // Update는 테스트용
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -48,8 +59,8 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         {
             SetText(PopUpType.twoBtn, "버튼 두개용", "확인 하셨습니까 ?");
         }
-    }
-    private void PopUpSwitch(PopUpType type)
+    }*/
+    private void OpenPopUp(PopUpType type)
     {
         isPopup = !isPopup;
         panelBtn.gameObject.SetActive(isPopup);
@@ -81,12 +92,19 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
             contentTMP = twoObj.transform.Find("TMP_Content").GetComponent<TextMeshProUGUI>();
         }
     }
+    // 현재 열린 팝업을 닫음
+    public void ClosePopUp()
+    {
+        isAccept = false;
+        panelBtn.gameObject.SetActive(false);
+        OpenPopUp(selectedType);
+    }
 
     // 해당 타입에 대한 텍스트들을 수정함
     public void SetText(PopUpType type, string title, string content)
     {
         selectedType = type;
-        PopUpSwitch(type);
+        OpenPopUp(type);
         InitComponent(type);
         titleTMP.text = title;
         contentTMP.text = content;

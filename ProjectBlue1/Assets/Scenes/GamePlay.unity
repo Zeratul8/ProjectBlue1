@@ -14256,66 +14256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151288942}
   m_CullTransparentMesh: 1
---- !u!1 &1166019339 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4095975743595484245, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-  m_PrefabInstance: {fileID: 1938552907}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1166019341 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4095975743595484203, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-  m_PrefabInstance: {fileID: 1938552907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166019339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1166019343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166019339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1166019341}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1227401711
 GameObject:
   m_ObjectHideFlags: 0
@@ -16063,11 +16003,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632548925}
   m_CullTransparentMesh: 1
---- !u!1 &1671326993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1671326993, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-  m_PrefabInstance: {fileID: 1938552907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1674182927
 GameObject:
   m_ObjectHideFlags: 0
@@ -17268,34 +17203,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1470727739}
     m_Modifications:
-    - target: {fileID: 589715328, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: m_text
-      value: "\uB124"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959677379, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: m_text
-      value: "\uC544\uB2C8\uC624"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015439645, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: oneBtn
-      value: 
-      objectReference: {fileID: 1951095693}
-    - target: {fileID: 2015439645, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: oneObj
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015439645, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: twoBtn
-      value: 
-      objectReference: {fileID: 1671326993}
-    - target: {fileID: 2015439645, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: twoObj
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015439645, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: panelBtn
-      value: 
-      objectReference: {fileID: 1166019343}
     - target: {fileID: 4095975742604695044, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17384,17 +17291,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PopUp
       objectReference: {fileID: 0}
-    - target: {fileID: 4095975743595484245, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
---- !u!1 &1951095693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4095975744298189352, guid: 5a1f9dc9fe7d07c469737aa80619d799, type: 3}
-  m_PrefabInstance: {fileID: 1938552907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1970384818
 GameObject:
   m_ObjectHideFlags: 0

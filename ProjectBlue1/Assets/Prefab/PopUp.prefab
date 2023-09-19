@@ -257,7 +257,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 881989558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015439645}
+        m_TargetAssemblyTypeName: PopUp, Assembly-CSharp
+        m_MethodName: ClosePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &881989556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32837517561f9554b97c540840ca4a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAccept: 0
   panelBtn: {fileID: 1166019343}
 --- !u!1 &4095975743359047611
 GameObject:
@@ -1615,7 +1628,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4095975744290454002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015439645}
+        m_TargetAssemblyTypeName: PopUp, Assembly-CSharp
+        m_MethodName: ClosePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4095975744290454000
 MonoBehaviour:
   m_ObjectHideFlags: 0
