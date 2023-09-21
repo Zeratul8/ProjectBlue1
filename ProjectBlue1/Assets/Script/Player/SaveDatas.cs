@@ -22,11 +22,11 @@ public static class SaveDatas
         savePath = Application.persistentDataPath + "/userSaveData.json";
         Load();
     }*/
-    public static void ReceiveData(int currentStage = 1, float currentGold = 0, int currentDiamond = 0)
+    public static void ReceiveData(int currentStage = 1, float currentGold = 0, int currentCristal = 0)
     {
         Data.etc.stage = currentStage;
         Data.etc.gold= currentGold;
-        Data.etc.diamond= currentDiamond;
+        Data.etc.cristal= currentCristal;
     }
     //서버 수동,자동세이브 넣을예정
     //[ContextMenu("Save")]
@@ -65,7 +65,7 @@ public static class SaveDatas
         Debug.Log("치명피해: " + Data.stat.CriticalDamageLV);
         Debug.Log("스테이지: " + Data.etc.stage);
         Debug.Log("골드: " + Data.etc.gold);
-        Debug.Log("다이아: " + Data.etc.diamond);
+        Debug.Log("다이아: " + Data.etc.cristal);
 
     }
 }
@@ -91,6 +91,6 @@ public class EtcData
 {
     public int stage;
     public float gold;
-    public int diamond;
+    public int cristal;
     // 추가될 정보들은 아래로 적기
 }

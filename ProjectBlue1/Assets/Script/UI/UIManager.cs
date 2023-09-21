@@ -23,6 +23,8 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     TextMeshProUGUI stageText;
     [SerializeField]
     TextMeshProUGUI goldText;
+    [SerializeField]
+    TextMeshProUGUI cristalText;
 
     [SerializeField]
     UIStatController attackCtr;
@@ -60,6 +62,10 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     public void SetGoldText()
     {
         goldText.text = SaveDatas.Data.etc.gold.ToString("F2");
+    }
+    public void SetCristalText()
+    {
+        cristalText.text = SaveDatas.Data.etc.cristal.ToString();
     }
 
     public void NotEnoughGoldPopup()

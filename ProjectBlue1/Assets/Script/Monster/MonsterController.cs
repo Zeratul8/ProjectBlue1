@@ -50,6 +50,10 @@ public class MonsterController : MonoBehaviour
     {
         aniController.Attack_Animation(monType);
     }
+    public void DieAnimation()
+    {
+        aniController.Die_Animation();
+    }
 
 
     IEnumerator Coroutine_MonsterWalk()

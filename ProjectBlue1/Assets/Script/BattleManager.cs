@@ -21,6 +21,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         StartBattle,
         PlayBattle,
         EndBattle,
+        AfterBattle,
         Max
     }
     [SerializeField]
@@ -77,6 +78,8 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
                 break;
             case BattleState.EndBattle:
                 KillMonster();
+                break;
+            case BattleState.AfterBattle:
                 break;
 
         }
@@ -135,13 +138,18 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
 
     public void KillMonster()
     {
-        EndStage();
+        StartCoroutine(EndStage());
     }
-    public void EndStage()
+    IEnumerator EndStage()
     {
+        Debug.Log("!!!!!!!!!몬스터 게임오브젝트이름1 : " + monster.gameObject.name);
+        battleState = BattleState.AfterBattle;
+        monster.DieAnimation();
         GetBattleRewards();
-        player.ResetBattleCondition(player.playerType);
         playerBattle.EndBattlePlayer();
+        yield return new WaitForSeconds(2f);
+        Debug.Log("!!!!!!!!!몬스터 게임오브젝트이름2 : " + monster.gameObject.name);
+        player.ResetBattleCondition(player.playerType);
         SaveDatas.Data.etc.stage++;
         UIManager.Instance.SetStateText();
         MonsterPoolManager.Instance.SetMonster(monster);

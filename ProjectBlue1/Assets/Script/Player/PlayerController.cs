@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
     {
         animCtr.Attack_Animation(playerType);
     }
+    public void DieAnimation()
+    {
+        animCtr.Die_Animation();
+    }
     public void ResetBattleCondition(PlayerType playerType)
     {
         //여기에 플레이어 걸어가는 애니메이션 실행시켜야함

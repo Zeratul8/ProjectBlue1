@@ -9,7 +9,10 @@ public class AnimationController : MonoBehaviour
         Jab,
         Slash,
         Cast,
-        SimpleBowShot
+        SimpleBowShot,
+        DeathFront,
+        DeathBack,
+        Max
     }
     public Animator animator;
     void Start()
@@ -91,6 +94,11 @@ public class AnimationController : MonoBehaviour
                 break;
         }
     }
+    public void Die_Animation()
+    {
+        animator.SetInteger("State", Random.Range(6, 8));
+    }
+
     public void StopWalk_Animation()
     {
         animator.SetInteger("State", 0);
