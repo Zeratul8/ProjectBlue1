@@ -33,6 +33,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
     public void Damaged(float damage)
     {
         stat.monsterHP -= damage;
+        SoundManager.Instance.Damaged();
         Debug.Log("!!!!!!몬스터남은피 : " + stat.monsterHP + "!!!!!!");
         if (stat.monsterHP <= 0)
             Die();
@@ -44,6 +45,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
         if (gameObject.activeSelf)
         {
             particleSystem.Play();
+            SoundManager.Instance.SkeletonDie();
         }
         StopAllCoroutines();
         attackSpeedBar.value = 0;

@@ -55,10 +55,12 @@ public class PlayerController : MonoBehaviour
     {
         //여기에 플레이어 걸어가는 애니메이션 실행시켜야함
         animCtr.State_Animation(playerType);
+        SoundManager.Instance.Walk();
     }
     public void StopWalkPlayer()
     {
         animCtr.StopWalk_Animation();
+        SoundManager.Instance.StopVFX();
     }
 
     
