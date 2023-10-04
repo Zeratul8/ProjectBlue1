@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     AudioSource BGMAudio;
     [SerializeField]
     AudioSource VFXAudio;
+    [SerializeField]
+    AudioSource VFXAudio2;
 
     Dictionary<BGMType, List<AudioClip>> BGMdic = new Dictionary<BGMType, List<AudioClip>>();
     Dictionary<VFXType, List<AudioClip>> VFXDic = new Dictionary<VFXType, List<AudioClip>>();
@@ -116,6 +119,15 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         PlayBattleBGM();
     }
 
+    public void SetBGMVolume(float value)
+    {
+        BGMAudio.volume = value;
+    }
+    public void SetVFXVolume(float value)
+    {
+        VFXAudio.volume = value;
+    }
+
     public void PlayBattleBGM()
     {
         List<AudioClip> value = BGMdic[BGMType.Main];
@@ -129,10 +141,12 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         List<AudioClip> value = VFXDic[VFXType.Damaged];
         int rand = Random.Range(0, value.Count);
         if (rand == 1)
-            VFXAudio.volume = 0.5f;
+        {
+            VFXAudio2.volume = VFXAudio.volume * 0.5f;
+            VFXAudio2.PlayOneShot(value[rand]);
+        }
         else
-            VFXAudio.volume = 1f;
-        VFXAudio.PlayOneShot(value[rand]);
+            VFXAudio.PlayOneShot(value[rand]);
     }
     public void ShootingAura()
     {

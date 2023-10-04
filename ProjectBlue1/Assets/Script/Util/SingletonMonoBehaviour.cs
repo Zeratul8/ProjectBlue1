@@ -14,6 +14,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBe
         if (Instance == null)
         {
             Instance = (T)this;
+            DontDestroyOnLoad(Instance);
             OnAwake();
         }
         else
@@ -28,8 +29,11 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBe
             OnStart();
         }
     }
+
+    /*
     private void OnDestroy()
     {
         Destroy(Instance);
     }
+    */
 }

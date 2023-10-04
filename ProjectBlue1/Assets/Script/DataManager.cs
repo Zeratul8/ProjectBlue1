@@ -7,6 +7,12 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
 {
     public List<Status> playerStats { get; set; } = new List<Status>();
     public List<Status> MonStats { get; set; } = new List<Status>();
+
+    protected override void OnAwake()
+    {
+        InitMonsterData();
+        InitPlayerData();
+    }
     public void InitMonsterData()
     {
         ExcelParsing.ParseExcelStatData("MonsterStat", MonStats);

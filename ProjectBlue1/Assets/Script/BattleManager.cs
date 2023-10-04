@@ -39,8 +39,6 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     public bool isPlayerAttack = false;
     protected override void OnAwake()
     {
-        DataManager.Instance.InitMonsterData();
-        DataManager.Instance.InitPlayerData();
         SaveDatas.Load();
     }
     private void Start()
@@ -81,6 +79,8 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
                 break;
             case BattleState.AfterBattle:
                 break;
+            default:
+                break;
 
         }
     }
@@ -117,8 +117,6 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
 
     public void InitBattle()
     {
-        DataManager.Instance.InitPlayerData();
-        DataManager.Instance.InitMonsterData();
         //monster = MonsterPoolManager.Instance.GetMonster();
         player.InitControlPlayer();
         monster.InitControlMonster();
