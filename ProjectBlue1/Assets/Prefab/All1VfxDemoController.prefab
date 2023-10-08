@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4562127821317042053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4562127821317042075}
+  - component: {fileID: 4562127821317042074}
+  - component: {fileID: 4562127821317042052}
+  m_Layer: 0
+  m_Name: All1VfxDemoController
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4562127821317042075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562127821317042053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4562127821317042074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562127821317042053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b359abc6e0e5d24a87889a91d4e7351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingCollectionIndex: 0
+  startingEffectIndex: 0
+  effectsToSpawnCollections:
+  - {fileID: 11400000, guid: d8ac90e7e4da50d419660ef755b0a622, type: 2}
+  - {fileID: 11400000, guid: 454185a685db4f0439b25b3433c8eea3, type: 2}
+  - {fileID: 11400000, guid: 26ad14216f123a64283702498e199fba, type: 2}
+  - {fileID: 11400000, guid: 63101e3d8df5abc4194e977b88374d88, type: 2}
+  - {fileID: 11400000, guid: 557c1bcf5fe675f4380f6c2157ca8d2b, type: 2}
+  - {fileID: 11400000, guid: 2997711416bbf0343b42d0df92fa198c, type: 2}
+  - {fileID: 11400000, guid: 4c8cb2c43250d704aa405d4a5704ffc2, type: 2}
+  projectileBasePrefab: {fileID: 8359660174469939308, guid: 4794fc12a4350014daec6bcfd7b2624e, type: 3}
+  projectileSceneSetupObject: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
+  playEffectKey: 113
+  currDemoEffect: {fileID: 11400000, guid: f1bd0e13fce394941ae794e48f2b04f8, type: 2}
+--- !u!114 &4562127821317042052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562127821317042053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b11c5475471bf4db78a90cae614ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseTimeScale: 273
+  increaseTimeScaleAlt: 119
+  decreaseTimeScale: 274
+  decreaseTimeScaleAlt: 115
+  pauseKey: 112
+  timeScaleInterval: 0.05
+  timeScaleSlider: {fileID: 0}
+  pausedButtonImage: {fileID: 0}
+  pausedButtonColor: {r: 0.972549, g: 0.83055687, b: 0.83055687, a: 1}
