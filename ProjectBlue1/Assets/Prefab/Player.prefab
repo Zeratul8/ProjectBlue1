@@ -463,7 +463,7 @@ MonoBehaviour:
   Earrings: {fileID: 0}
   Glasses: {fileID: 0}
   Mask: {fileID: 0}
-  PrimaryMeleeWeapon: {fileID: 21300000, guid: e00ac27cae6441f4a9dd3db256ccf27c, type: 3}
+  PrimaryMeleeWeapon: {fileID: 21300000, guid: 68ab41546afc473f867fdbeaae8f359d, type: 3}
   SecondaryMeleeWeapon: {fileID: 0}
   Armor:
   - {fileID: 21300024, guid: 968f66442528470cabafd5508554ca5e, type: 3}
@@ -27114,7 +27114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 320
-  m_Sprite: {fileID: 21300000, guid: e00ac27cae6441f4a9dd3db256ccf27c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68ab41546afc473f867fdbeaae8f359d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -7759,9 +7759,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1415246448}
-  - {fileID: 556254088}
   - {fileID: 1713535442}
   - {fileID: 7100858140636341341}
+  - {fileID: 556254088}
   - {fileID: 713618982}
   - {fileID: 31911463}
   m_Father: {fileID: 0}
@@ -12719,7 +12719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4305107873441922, guid: e55c1a3a8dca0314485c5b1a862612a0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4305107873441922, guid: e55c1a3a8dca0314485c5b1a862612a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13263,6 +13263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814836243}
   - component: {fileID: 814836242}
+  - component: {fileID: 814836244}
   m_Layer: 0
   m_Name: EffectManager
   m_TagString: Untagged
@@ -13312,6 +13313,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!210 &814836244
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814836241}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 201
 --- !u!1 &832090098
 GameObject:
   m_ObjectHideFlags: 0
@@ -15960,15 +15972,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820394554180967637, guid: f503af548dbf66a4db0052b5e5e5b4f4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5820394554180967637, guid: f503af548dbf66a4db0052b5e5e5b4f4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5820394554180967637, guid: f503af548dbf66a4db0052b5e5e5b4f4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5820394554180967637, guid: f503af548dbf66a4db0052b5e5e5b4f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16890,7 +16902,7 @@ Transform:
   m_Children:
   - {fileID: 1620989584}
   m_Father: {fileID: 683494676}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713535443
 MonoBehaviour:
@@ -25680,7 +25692,7 @@ Transform:
   - {fileID: 7100673649396899599}
   - {fileID: 5139709521256585481}
   m_Father: {fileID: 683494676}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!4 &7100872768691435339
 Transform:

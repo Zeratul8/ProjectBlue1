@@ -54,7 +54,7 @@ namespace AllIn1VfxToolkit.Demo.Scripts
 
         private void Update()
         {
-            if(currDemoEffect.canBePlayedAgain && Input.GetKeyDown(playEffectKey)) PlayCurrentEffect();
+            if(currDemoEffect.canBePlayedAgain && Input.GetKeyDown(playEffectKey)) PlayCurrentEffect(true);
             if(Input.GetKeyDown(nextEffectKey) || Input.GetKeyDown(nextEffectKeyAlt)) ChangeCurrentEffect(1);
             else if(Input.GetKeyDown(previousEffectKey) || Input.GetKeyDown(previousEffectKeyAlt)) ChangeCurrentEffect(-1);
 
