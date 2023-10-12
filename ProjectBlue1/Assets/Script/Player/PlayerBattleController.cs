@@ -68,7 +68,8 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
             if (attackSpeedBar.value >= attackSpeedBar.maxValue)
             {
                 playerCtr.AttackAnimation(playerType);
-                EffectManager.Instance.PlayCurrentEffect(true);
+                EffectManager.Instance.SlashSword(true);
+                Shooter.Instance.GetProjectile();
                 Attack();
                 Debug.Log("°ø°ÝÇÔ!");
                 attackSpeedBar.value = 0;

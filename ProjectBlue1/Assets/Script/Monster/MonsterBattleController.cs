@@ -73,4 +73,13 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<SwordAura>() != null)
+        {
+            var aura = collision.GetComponent<SwordAura>();
+            Shooter.Instance.SetProjectile(aura);
+        }
+    }
 }
