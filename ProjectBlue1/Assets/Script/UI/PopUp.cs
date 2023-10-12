@@ -36,7 +36,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
 
     private void Start()
     {
-        panelBtn.gameObject.SetActive(false);
+        panelBtn.gameObject.SetActive(true);
 
         var images = GetComponentsInChildren<Image>();
         foreach(var image in images)
@@ -46,7 +46,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
             if(image.gameObject.name.Equals("IMG_TwoBtn"))
                 twoObj = image.gameObject;
         }
-        var oneButtons = oneBtn.transform.GetComponentsInChildren<Button>();
+        var oneButtons = oneObj.GetComponentsInChildren<Button>();
         foreach(var button in oneButtons)
         {
             if(button.gameObject.name.Equals("BTN_Yes"))
@@ -57,7 +57,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         }
         //oneObj = panelBtn.gameObject.transform.Find("IMG_OneBtn").gameObject;
         //twoObj = panelBtn.gameObject.transform.Find("IMG_TwoBtn").gameObject;
-        var twoButtons = twoObj.transform.GetComponentsInChildren<Button>();
+        var twoButtons = twoObj.GetComponentsInChildren<Button>();
         foreach(var button in twoButtons)
         {
             if(button.gameObject.name.Equals("BTN_Yes"))
@@ -70,8 +70,6 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
             }
         }
         //acceptBtn = twoObj.transform.Find("BTN_Yes").GetComponent<Button>();
-        oneObj.SetActive(false);
-        twoObj.SetActive(false);
 
         // 패널 false, 현재 열린 팝업 false
         panelBtn.onClick.AddListener(()=> ClosePopUp());
@@ -79,6 +77,11 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         twoAcceptBtn.onClick.AddListener(() => { ClosePopUp(); isAccept = true; });
         twoCancelBtn.onClick.AddListener(() => { ClosePopUp(); });
         // '확인', '아니오'를 누르면 버튼 컴포넌트에 있는 OnClick 이벤트로 ClosePopUp 실행
+
+
+        oneObj.SetActive(false);
+        twoObj.SetActive(false);
+        panelBtn.gameObject.SetActive(false);
     }
     private void OnDestroy()
     {
