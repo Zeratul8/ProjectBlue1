@@ -24,7 +24,7 @@ public class MonsterPoolManager : SingletonMonoBehaviour<MonsterPoolManager>
             monsterObj.AddComponent<MonsterController>();
         }
 
-        monsterPool = new GameObjectPool<MonsterController>(5, () =>
+        monsterPool = new GameObjectPool<MonsterController>(2, () =>
         {
             GameObject obj = Instantiate(monsterObj, this.transform);
             obj.transform.position = Constants.monsterPos;

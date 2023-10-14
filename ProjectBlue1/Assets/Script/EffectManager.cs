@@ -9,6 +9,7 @@ public class EffectManager : SingletonMonoBehaviour<EffectManager>
         None = -1,
         Slash,
         SwordAura,
+        SlashDamaged,
         Max
     }
 
@@ -55,6 +56,11 @@ public class EffectManager : SingletonMonoBehaviour<EffectManager>
         PlayCurrentEffect(effectsDictionary[EffectType.Slash], isAfterSetupAndInstantiateEffect);
     }
 
+    public void SlashDamaged(Transform damagedTransform, bool isAfterSetupAndInstantiateEffect = false)
+    {
+        Vector3 correctedPos = new Vector3(0, Constants.monsterHeight / 2 - 0.3f, 0);
+        PlayCurrentEffect(damagedTransform, correctedPos, effectsDictionary[EffectType.SlashDamaged], isAfterSetupAndInstantiateEffect);
+    }
 
 
 
@@ -106,6 +112,55 @@ public class EffectManager : SingletonMonoBehaviour<EffectManager>
         }
         tempTransform.localScale *= currEffect.scaleMultiplier;
         tempTransform.position += currEffect.positionOffset;
+
+        if (!isAfterSetupAndInstantiateEffect && currEffect.doCameraShake) AllIn1Shaker.i.DoCameraShake(currEffect.mainEffectShakeAmount);
+
+        //currentEffectPlays++;
+    }
+    void PlayCurrentEffect(Transform curTransform, Vector3 correctedPos, All1VfxDemoEffect currEffect, bool isAfterSetupAndInstantiateEffect = false)
+    {
+        if (!isAfterSetupAndInstantiateEffect && currEffect.onlyOneAtATime) DestroyAllChildren();
+
+        timeSinceEffectPlay = 0f;
+
+        Transform tempTransform = null;
+        if (currEffect.isShootProjectile)
+        {
+            Transform projectileBase = Instantiate(projectileBasePrefab, curTransform.position, Quaternion.identity).transform;
+            projectileBase.forward = curTransform.forward;
+            projectileBase.parent = curTransform;
+            projectileBase.localRotation = Quaternion.identity;
+
+            tempTransform = Instantiate(currEffect.projectilePrefab, curTransform.position, Quaternion.identity).transform;
+            tempTransform.localRotation = Quaternion.identity;
+            tempTransform.forward = curTransform.forward;
+            tempTransform.parent = projectileBase;
+            AllIn1DemoProjectile tempProjectileInstance = projectileBase.GetComponent<AllIn1DemoProjectile>();
+            tempProjectileInstance.Initialize(curTransform, curTransform.forward, currEffect.projectileSpeed, currEffect.impactPrefab, currEffect.scaleMultiplier);
+            if (currEffect.doCameraShake) tempProjectileInstance.AddScreenShakeOnImpact(currEffect.projectileImpactShakeAmount);
+        }
+        else
+        {
+            tempTransform = Instantiate(currEffect.effectPrefab, curTransform).transform;
+            if (!currEffect.spawnTouchingFloor) tempTransform.localPosition = Vector3.zero;
+            tempTransform.localRotation = currEffect.effectPrefab.transform.rotation;
+            if (currEffect.canBePlayedAgain && currEffect.randomSpreadRadius > 0f && currentEffectPlays > 0)
+            {
+                tempTransform.position += new Vector3(Random.Range(-currEffect.randomSpreadRadius, currEffect.randomSpreadRadius), 0f,
+                    Random.Range(-currEffect.randomSpreadRadius, currEffect.randomSpreadRadius));
+            }
+        }
+        if (currEffect.muzzleFlashPrefab != null)
+        {
+
+            tempTransform = Instantiate(currEffect.muzzleFlashPrefab, curTransform.position, Quaternion.identity).transform;
+            tempTransform.localRotation = Quaternion.identity;
+            tempTransform.forward = curTransform.forward;
+            tempTransform.parent = curTransform;
+            tempTransform.localScale *= currEffect.scaleMultiplier;
+        }
+        tempTransform.localScale *= currEffect.scaleMultiplier;
+        tempTransform.position += currEffect.positionOffset + correctedPos;
 
         if (!isAfterSetupAndInstantiateEffect && currEffect.doCameraShake) AllIn1Shaker.i.DoCameraShake(currEffect.mainEffectShakeAmount);
 

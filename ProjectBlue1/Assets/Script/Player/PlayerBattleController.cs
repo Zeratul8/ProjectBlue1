@@ -70,7 +70,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
                 playerCtr.AttackAnimation(playerType);
                 EffectManager.Instance.SlashSword(true);
                 Shooter.Instance.GetProjectile();
-                Attack();
+                //Attack();
                 Debug.Log("°ø°ÝÇÔ!");
                 attackSpeedBar.value = 0;
             }
