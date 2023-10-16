@@ -29,7 +29,6 @@ public class MonsterController : MonoBehaviour
     {
         aniController = GetComponentInChildren<AnimationController>();
         monsterBattle = GetComponent<MonsterBattleController>();
-        
         Constants.monsterHeight = GetComponent<CapsuleCollider2D>().size.y;
     }
     public void InitControlMonster()
@@ -47,8 +46,7 @@ public class MonsterController : MonoBehaviour
 
     public void InitMonster()
     {
-        if(body == null)    body = GetComponentInChildren<SortingGroup>().transform;
-        body.rotation = Quaternion.Euler(0,0,0);
+        aniController.ResetStand_Animation();
         StartCoroutine(Coroutine_MonsterWalk());
     }
 

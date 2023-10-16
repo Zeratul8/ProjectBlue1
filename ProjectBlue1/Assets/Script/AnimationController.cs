@@ -94,6 +94,14 @@ public class AnimationController : MonoBehaviour
                 break;
         }
     }
+
+    public void ResetStand_Animation()
+    {
+        animator.SetInteger("State", 0);
+        animator.SetBool("Ready", false);
+        animator.SetBool("Action", false);
+    }
+
     public void Die_Animation()
     {
         animator.SetInteger("State", Random.Range(6, 8));
