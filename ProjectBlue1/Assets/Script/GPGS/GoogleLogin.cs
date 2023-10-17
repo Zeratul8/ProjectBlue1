@@ -1,3 +1,4 @@
+using GooglePlayGames.BasicApi.SavedGame;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames;
 using System.Collections;
@@ -6,7 +7,6 @@ using UnityEngine;
 
 public class GoogleLogin : MonoBehaviour
 {
-
     public void LoginGPGS()
     {
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);

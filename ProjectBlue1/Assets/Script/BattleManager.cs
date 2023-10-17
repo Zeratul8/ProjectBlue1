@@ -39,7 +39,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     public bool isPlayerAttack = false;
     protected override void OnAwake()
     {
-        SaveDatas.Load();
+        GPGSSaveData.Instance.LoadData();
     }
     private void Start()
     {

@@ -39,25 +39,14 @@ public static class SaveDatas
         // JSON 문자열로 변환
         string jsonStr = JsonUtility.ToJson(Data);
         // 세이브 경로로 JSON 파일 저장
+        GPGSSaveData.Instance.SaveData(jsonStr);
         File.WriteAllText(savePath, jsonStr);
         Debug.Log("데이터 저장에 성공하였습니다!!!!");
     }
     //[ContextMenu("Load")]
-    [MenuItem("Test/Load")]
-    public static void Load()
+    public static void Load(string jsonData)
     {
-        stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
-        if(!File.Exists(savePath))
-        {
-            stat.InitFirstStats();
-            ReceiveData();
-            Save();
-            Debug.Log("세이브 파일이 없어, 새로 만들고 초기값을 설정했습니다!!!!");
-            return;
-        }
- 
-        string jsonStr = File.ReadAllText(savePath);
-        Data = JsonUtility.FromJson<GameData>(jsonStr);
+        Data = JsonUtility.FromJson<GameData>(jsonData);
         Debug.Log("데이터 로드 성공! 아래는 불러온 스텟");
         Debug.Log("체력: " + Data.stat.HealthLv);
         Debug.Log("공격력: " + Data.stat.AttackLv);
@@ -67,6 +56,20 @@ public static class SaveDatas
         Debug.Log("골드: " + Data.etc.gold);
         Debug.Log("다이아: " + Data.etc.cristal);
 
+    }
+    public static void LoadFail()
+    {
+        stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
+        if (!File.Exists(savePath))
+        {
+            stat.InitFirstStats();
+            ReceiveData();
+            Save();
+            Debug.Log("세이브 파일이 없어, 새로 만들고 초기값을 설정했습니다!!!!");
+            return;
+        }
+        string jsonStr = File.ReadAllText(savePath);
+        Data = JsonUtility.FromJson<GameData>(jsonStr);
     }
 }
 [Serializable]
