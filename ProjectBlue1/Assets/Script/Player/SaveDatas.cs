@@ -30,7 +30,9 @@ public static class SaveDatas
     }
     //서버 수동,자동세이브 넣을예정
     //[ContextMenu("Save")]
+#if UNITY_EDITOR
     [MenuItem("Test/Save")]
+#endif
     public static void Save()
     {
         stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();

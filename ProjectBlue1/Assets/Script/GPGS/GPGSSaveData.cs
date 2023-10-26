@@ -8,6 +8,10 @@ using UnityEngine;
 
 public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
 {
+    protected override void OnStart()
+    {
+        StartCoroutine(Coroutine_AutoSave());
+    }
     public ISavedGameClient SavedGame()
     {
         return PlayGamesPlatform.Instance.SavedGame;
@@ -71,6 +75,25 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
                 else
                     Debug.Log("!!!!!!!!!!!!!클라우드 데이터 삭제 실패!!!!!!!!!!!!!!");
             });
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
+    IEnumerator Coroutine_AutoSave()
+    {
+        float time = 0f;
+        while(true)
+        {
+            time += Time.deltaTime;
+            if(time > 60)
+            {
+                time = 0f;
+                SaveDatas.Save();
+            }
+        }
     }
     
 }

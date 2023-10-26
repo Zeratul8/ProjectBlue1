@@ -1,0 +1,11 @@
+"Unity 2021 and 2022 versions tested and confirmed."
+
+"For versions 2021 and below, the newtonsoft-json package must be installed."
+
+"Go to 'Window' -> 'Package Manager', then click the '+' button in the top left.
+Select 'Add package by name', enter 'com.unity.nuget.newtonsoft-json', and click 'Add'."
+
+"This is a game balancing tool available in the Unity Engine's editor. 
+It allows you to adjust curves according to your intentions, making it easy to visually modify abilities for each level."
+
+"Please direct any inquiries regarding the editor to either https://discord.gg/4dVURAkg or jmhj1129@gmail.com."

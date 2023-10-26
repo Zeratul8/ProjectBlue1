@@ -25,7 +25,7 @@ public class StartUIManager : MonoBehaviour
 #if UNITY_EDITOR
         EditorApplication.isPlaying = false;
 #elif UNITY_ANDROID
-        Application.Quit;
+        Application.Quit();
 #endif
     }
 

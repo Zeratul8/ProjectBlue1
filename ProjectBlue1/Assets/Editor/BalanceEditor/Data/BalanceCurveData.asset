@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f90e12915af8d4793bebcff466b298, type: 3}
+  m_Name: BalanceCurveData
+  m_EditorClassIdentifier: 
+  autoSaveJsonFileName: BalanceCurveData
+  maxBalanceLevelValue: 1000
+  balanceSliderValue: 1000
+  startKeyValue: 0
+  autoSaveJson: 0
+  fields:
+  - fieldName: PlayerLevel
+    fieldType: 0
+    fieldValue: 0
+    fieldDecimalPoint: 0
+  - fieldName: Gold
+    fieldType: 0
+    fieldValue: 0
+    fieldDecimalPoint: 0
+  - fieldName: Attack
+    fieldType: 1
+    fieldValue: 100.00
+    fieldDecimalPoint: 2
+  - fieldName: NewField6
+    fieldType: 0
+    fieldValue: 100
+    fieldDecimalPoint: 0
+  - fieldName: NewField7
+    fieldType: 0
+    fieldValue: 100
+    fieldDecimalPoint: 0
+  animationCurves:
+  - fieldName: Gold
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - fieldName: Attack
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - fieldName: NewField6
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - fieldName: NewField7
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  maxValues:
+  - fieldName: Key Field Value
+    maxValue: 10
+  - fieldName: Gold
+    maxValue: 100000
+  - fieldName: Attack
+    maxValue: 1000
+  - fieldName: NewField6
+    maxValue: 1000
+  - fieldName: NewField7
+    maxValue: 1000

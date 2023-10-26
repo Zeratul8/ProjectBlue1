@@ -38,7 +38,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
     {
         panelBtn.gameObject.SetActive(true);
 
-        var images = GetComponentsInChildren<Image>();
+        var images = GetComponentsInChildren<Image>(true);
         foreach(var image in images)
         {
             if(image.gameObject.name.Equals("IMG_OneBtn"))
@@ -46,7 +46,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
             if(image.gameObject.name.Equals("IMG_TwoBtn"))
                 twoObj = image.gameObject;
         }
-        var oneButtons = oneObj.GetComponentsInChildren<Button>();
+        var oneButtons = oneObj.GetComponentsInChildren<Button>(true);
         foreach(var button in oneButtons)
         {
             if(button.gameObject.name.Equals("BTN_Yes"))
@@ -57,7 +57,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         }
         //oneObj = panelBtn.gameObject.transform.Find("IMG_OneBtn").gameObject;
         //twoObj = panelBtn.gameObject.transform.Find("IMG_TwoBtn").gameObject;
-        var twoButtons = twoObj.GetComponentsInChildren<Button>();
+        var twoButtons = twoObj.GetComponentsInChildren<Button>(true);
         foreach(var button in twoButtons)
         {
             if(button.gameObject.name.Equals("BTN_Yes"))
@@ -101,19 +101,19 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
     }*/
     public void OpenPopUp(PopUpType type)
     {
-        isPopup = !isPopup;
+        //isPopup = !isPopup;
         oneObj.SetActive(false);
         twoObj.SetActive(false);
-        panelBtn.gameObject.SetActive(isPopup);
+        panelBtn.gameObject.SetActive(true);
 
 
         if (type == PopUpType.oneBtn)
         {
-            oneObj.SetActive(isPopup);
+            oneObj.SetActive(true);
         }
         else if (type == PopUpType.twoBtn)
         {
-            twoObj.SetActive(isPopup);
+            twoObj.SetActive(true);
         }
 
 
