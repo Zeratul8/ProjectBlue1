@@ -10,8 +10,9 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
 {
     protected override void OnStart()
     {
-        StartCoroutine(Coroutine_AutoSave());
+        //StartCoroutine(Coroutine_AutoSave());
     }
+
     public ISavedGameClient SavedGame()
     {
         return PlayGamesPlatform.Instance.SavedGame;
@@ -19,7 +20,7 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
 
     public void SaveData(string jsonData)
     {
-        SavedGame().OpenWithAutomaticConflictResolution("usersavedata", DataSource.ReadCacheOrNetwork,
+        SavedGame().OpenWithAutomaticConflictResolution(PlayGamesPlatform.Instance.GetUserId().ToString(), DataSource.ReadCacheOrNetwork,
             ConflictResolutionStrategy.UseLastKnownGood, (status, data) =>
             {
                 if (status == SavedGameRequestStatus.Success)
@@ -41,7 +42,7 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
     }
     public void LoadData()
     {
-        SavedGame().OpenWithAutomaticConflictResolution("usersavedata", DataSource.ReadCacheOrNetwork,
+        SavedGame().OpenWithAutomaticConflictResolution(PlayGamesPlatform.Instance.GetUserId().ToString(), DataSource.ReadCacheOrNetwork,
             ConflictResolutionStrategy.UseLastKnownGood, (status, data) =>
             {
                 if (status == SavedGameRequestStatus.Success)

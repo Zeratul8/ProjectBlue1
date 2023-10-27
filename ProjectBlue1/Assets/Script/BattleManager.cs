@@ -40,6 +40,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     public bool isPlayerAttack = false;
     protected override void OnAwake()
     {
+        PlayGamesPlatform.Activate();
         GPGSSaveData.Instance.LoadData();
     }
     private void Start()
