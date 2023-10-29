@@ -12,8 +12,6 @@ using UnityEditor;
 public static class SaveDatas
 {
     static string savePath = Application.persistentDataPath + "/userSaveData.json";
-
-    public static PlayerStatus stat;
     public static GameData Data = new GameData();
     /*private void Start()
     {
@@ -35,7 +33,6 @@ public static class SaveDatas
 #endif
     public static void Save()
     {
-        stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
         //게임데이터 여기다 불러와야함!
 
         // JSON 문자열로 변환
@@ -61,10 +58,9 @@ public static class SaveDatas
     }
     public static void LoadFail()
     {
-        stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
         if (!File.Exists(savePath))
         {
-            stat.InitFirstStats();
+            PlayerStatus.InitFirstStats();
             ReceiveData();
             Save();
             Debug.Log("세이브 파일이 없어, 새로 만들고 초기값을 설정했습니다!!!!");

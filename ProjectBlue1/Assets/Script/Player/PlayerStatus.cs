@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public static class PlayerStatus
 {
-    public Status playerStat { get; set; }
-    public float playerHP;
+    public static Status playerStat { get; set; }
+    public static float playerHP;
     
-    public void InitFirstStats()
+    public static void InitFirstStats()
     {
+        DataManager.Instance.InitMonsterData();
+        DataManager.Instance.InitPlayerData();
         playerStat = DataManager.Instance.playerStats[0];
         playerHP = playerStat.Health;
     }
 
-    public void LoadStatus()
+    public static void LoadStatus()
     {
         playerStat.Attack = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack;
         playerStat.Health = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health;

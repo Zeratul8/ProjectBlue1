@@ -23,7 +23,7 @@ public class GoogleLogin : MonoBehaviour
             // Continue with Play Games Services
             reLogin = null;
             StopAllCoroutines();
-            SceneManager.LoadSceneAsync(1);
+            SceneManager.LoadSceneAsync("Loading");
         }
         else
         {

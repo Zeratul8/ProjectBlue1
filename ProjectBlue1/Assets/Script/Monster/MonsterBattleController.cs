@@ -81,7 +81,7 @@ public class MonsterBattleController : MonoBehaviour//, IBattleController
             var aura = collision.GetComponent<SwordAura>();
             
             Shooter.Instance.SetProjectile(aura);
-            Damaged(SaveDatas.stat.playerStat.Attack);
+            Damaged(PlayerStatus.playerStat.Attack);
             EffectManager.Instance.SlashDamaged(transform);
         }
     }

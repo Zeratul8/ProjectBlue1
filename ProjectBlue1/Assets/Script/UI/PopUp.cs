@@ -155,6 +155,8 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
     {
         oneBtn.onClick.RemoveAllListeners();
         oneBtn.onClick.AddListener(action + ClosePopUp);
+        panelBtn.onClick.RemoveAllListeners();
+        panelBtn.onClick.AddListener(action + ClosePopUp);
     }
 
     public void SetTwoButtonPopup(UnityAction okAction, UnityAction cancelAction)
@@ -163,5 +165,7 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
         twoAcceptBtn.onClick.AddListener(okAction + ClosePopUp);
         twoCancelBtn.onClick.RemoveAllListeners();
         twoAcceptBtn.onClick.AddListener(cancelAction + ClosePopUp);
+        panelBtn.onClick.RemoveAllListeners();
+        panelBtn.onClick.AddListener(cancelAction + ClosePopUp);
     }
 }

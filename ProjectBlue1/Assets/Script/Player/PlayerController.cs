@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerStatus stat;
-
     public PlayerType playerType;
 
     AnimationController animCtr;
@@ -22,8 +20,7 @@ public class PlayerController : MonoBehaviour
     public void InitControlPlayer()
     {
         animCtr = GetComponentInChildren<AnimationController>();
-        stat = GetComponent<PlayerStatus>();
-        stat.InitFirstStats();
+        PlayerStatus.InitFirstStats();
         ResetBattleCondition(playerType);
     }
 

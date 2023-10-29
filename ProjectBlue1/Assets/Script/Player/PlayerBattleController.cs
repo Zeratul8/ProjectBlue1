@@ -8,8 +8,6 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
     [SerializeField]
     PlayerController.PlayerType playerType;
     [SerializeField]
-    PlayerStatus stat;
-    [SerializeField]
     PlayerController playerCtr;
 
     public ParticleSystem particleSystem;
@@ -28,27 +26,27 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
 
     public void SetPlayerStat()
     {
-        stat.playerStat.Attack = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack;
-        stat.playerStat.Health = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health;
-        stat.playerStat.CriticalHit = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
-        stat.playerStat.CriticalDamage = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
-        stat.playerStat.AttackSpeed = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
+        PlayerStatus.playerStat.Attack = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack;
+        PlayerStatus.playerStat.Health = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health;
+        PlayerStatus.playerStat.CriticalHit = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
+        PlayerStatus.playerStat.CriticalDamage = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
+        PlayerStatus.playerStat.AttackSpeed = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
     }
 
     
     public void Attack()
     {
-        BattleManager.Instance.ProcessAttack(BattleManager.RoleType.Player, stat.playerStat.Attack);
+        BattleManager.Instance.ProcessAttack(BattleManager.RoleType.Player, PlayerStatus.playerStat.Attack);
     }
     public void Damaged(float damage)
     {
-        stat.playerHP -= damage;
-        if (stat.playerHP < 0)
+        PlayerStatus.playerHP -= damage;
+        if (PlayerStatus.playerHP < 0)
             Die();
     }
     public void Die()
     {
-        if(stat.playerHP <= 0)
+        if(PlayerStatus.playerHP <= 0)
         {
             Debug.Log("!!!!!!플레이어가 쥬것따!!!!!!");
             // 부활 처리 ? 스테이지 다시 시작?
@@ -76,7 +74,7 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
             }
             else
             {
-                attackSpeedBar.value += (attackSpeedBar.maxValue / stat.playerStat.AttackSpeed) * Time.deltaTime;
+                attackSpeedBar.value += (attackSpeedBar.maxValue / PlayerStatus.playerStat.AttackSpeed) * Time.deltaTime;
                 yield return null;
             }
         }

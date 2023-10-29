@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
 {
+    bool isReady;
+    public bool IsReady { get { return isReady; } }
     protected override void OnStart()
     {
         //StartCoroutine(Coroutine_AutoSave());
@@ -20,7 +22,7 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
 
     public void SaveData(string jsonData)
     {
-        SavedGame().OpenWithAutomaticConflictResolution(PlayGamesPlatform.Instance.GetUserId().ToString(), DataSource.ReadCacheOrNetwork,
+        SavedGame().OpenWithAutomaticConflictResolution("UserSaveData", DataSource.ReadCacheOrNetwork,
             ConflictResolutionStrategy.UseLastKnownGood, (status, data) =>
             {
                 if (status == SavedGameRequestStatus.Success)
@@ -42,10 +44,10 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
     }
     public void LoadData()
     {
-        SavedGame().OpenWithAutomaticConflictResolution(PlayGamesPlatform.Instance.GetUserId().ToString(), DataSource.ReadCacheOrNetwork,
+        SavedGame().OpenWithAutomaticConflictResolution("UserSaveData", DataSource.ReadCacheOrNetwork,
             ConflictResolutionStrategy.UseLastKnownGood, (status, data) =>
             {
-                if (status == SavedGameRequestStatus.Success)
+                //if (status == SavedGameRequestStatus.Success)
                     SavedGame().ReadBinaryData(data, LoadCloudData);
             });
     }
@@ -53,20 +55,27 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
     {
         if (status == SavedGameRequestStatus.Success)
         {
-            string data = System.Text.Encoding.UTF8.GetString(loadData);
-            // 여기서 이제 불러온 데이터 스트링 가지고 클래스맞게 파싱해주면 될듯
-            SaveDatas.Load(data);
+            if (loadData != null && loadData.Length > 0)
+            {
+                string data = System.Text.Encoding.UTF8.GetString(loadData);
+                SaveDatas.Load(data);
+            }
+            else
+            {
+                SaveDatas.LoadFail();
+            }
         }
         else
         {
             SaveDatas.LoadFail();
             Debug.Log("!!!!!!클라우드 데이터 로딩 실패!!!!!!!");
         }
+        isReady = true;
     }
 
     public void DeleteData()
     {
-        SavedGame().OpenWithAutomaticConflictResolution("usersavedata", DataSource.ReadCacheOrNetwork,
+        SavedGame().OpenWithAutomaticConflictResolution("UserSaveData", DataSource.ReadCacheOrNetwork,
             ConflictResolutionStrategy.UseLongestPlaytime, (status, data) =>
             {
                 if (status == SavedGameRequestStatus.Success)
