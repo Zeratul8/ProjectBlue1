@@ -26,6 +26,7 @@ public class LoadData : MonoBehaviour
                 PopUp.Instance.SetText(PopUp.PopUpType.oneBtn, "Error!", "클라우드에러!!");
                 PopUp.Instance.SetOneButtonPopup(() => SceneManager.LoadSceneAsync("Start"));
                 PopUp.Instance.OpenPopUp(PopUp.PopUpType.oneBtn);
+                break;
             }
             if (GPGSSaveData.Instance.IsReady)
             {

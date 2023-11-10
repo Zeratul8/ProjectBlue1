@@ -52,8 +52,13 @@ public static class ExcelParsing
 
     static DataSet ParseExcelData(string excelFile)
     {
-        string filePath = Application.streamingAssetsPath + "/Excel/" + excelFile + ".xlsx";
-        if(File.Exists(filePath))
+        //string filePath = Application.streamingAssetsPath + "/Excel/" + excelFile + ".xlsx";
+#if UNITY_ANDROID
+        string filePath = Application.persistentDataPath + "Resources/Excel" + excelFile + ".xlsx";
+#else
+        string filePath = Application.dataPath + "Resources/Excel" + excelFile + ".xlsx";
+#endif
+        if (File.Exists(filePath))
         {
             using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
@@ -70,6 +75,25 @@ public static class ExcelParsing
             return null;
         }
     }
+
+    /*
+    static DataSet ParseExcelData(string file)
+    {
+
+        using (FileStream reader = ExcelReaderFactory.CreateReader(file))
+        {
+            Debug.Log("리턴함!");
+            return reader.AsDataSet();
+        }
+
+        else
+        {
+            Debug.Log("!!!!!!!!!!!!!!파일을 찾을수 없음!!!!!!!!");
+            return null;
+        }
+    }
+    */
+
 }
 
 [Serializable]
