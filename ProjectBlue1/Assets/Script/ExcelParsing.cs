@@ -7,12 +7,13 @@ using System.Data;
 
 public static class ExcelParsing
 {
-    public static void ParseExcelStatData(string excelFile, List<Status> states)
+    public static void ParseExcelStatData(Stream excelFile, List<Status> states)
     {
         using (var result = ParseExcelData(excelFile))
         {
             if (result != null)
             {
+                Debug.Log("테이블 갯수 : " + result.Tables.Count);
                 // 시트 개수만큼 반복
                 for (int i = 0; i < result.Tables.Count; i++)
                 {
@@ -54,9 +55,11 @@ public static class ExcelParsing
     {
         //string filePath = Application.streamingAssetsPath + "/Excel/" + excelFile + ".xlsx";
 #if UNITY_ANDROID
-        string filePath = Application.persistentDataPath + "Resources/Excel" + excelFile + ".xlsx";
+        string filePath = Application.streamingAssetsPath + "/Excel/" + excelFile + ".xlsx";
+        Debug.Log("데이터 경로!!!!! : " + filePath);
+
 #else
-        string filePath = Application.dataPath + "Resources/Excel" + excelFile + ".xlsx";
+        string filePath = Application.streamingAssetsPath + "/Excel/" + excelFile + ".xlsx";
 #endif
         if (File.Exists(filePath))
         {
@@ -76,23 +79,23 @@ public static class ExcelParsing
         }
     }
 
-    /*
-    static DataSet ParseExcelData(string file)
+    
+    static DataSet ParseExcelData(Stream csvContents)
     {
-
-        using (FileStream reader = ExcelReaderFactory.CreateReader(file))
+        if(csvContents != null)
         {
-            Debug.Log("리턴함!");
-            return reader.AsDataSet();
+            using (var reader = ExcelReaderFactory.CreateCsvReader(csvContents))
+            {
+                Debug.Log("리턴함!");
+                return reader.AsDataSet();
+            }
         }
-
         else
         {
             Debug.Log("!!!!!!!!!!!!!!파일을 찾을수 없음!!!!!!!!");
             return null;
         }
     }
-    */
 
 }
 

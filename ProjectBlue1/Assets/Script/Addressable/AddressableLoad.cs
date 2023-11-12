@@ -14,8 +14,6 @@ public class AddressableLoad : SingletonMonoBehaviour<AddressableLoad>
     readonly string playerDataName = "PlayerStats";
     readonly string monsterDataName = "Assets/Excel/MonsterStats.csv";
 
-    readonly string playerDataPath = "https://drive.google.com/u/0/uc?id=1hbzw8nU4WCje2GA-lXsiP0FgfuNLiAc9&export=download";
-
     List<AsyncOperationHandle> handles = new List<AsyncOperationHandle>();
 
 
@@ -26,7 +24,7 @@ public class AddressableLoad : SingletonMonoBehaviour<AddressableLoad>
 
     IEnumerator Addressable_LoadPlayerData()
     {
-        var handle = Addressables.LoadAssetAsync<WWW>(playerDataName);
+        var handle = Addressables.LoadAssetAsync<TextAsset>(playerDataName);
         
 
 
@@ -34,6 +32,9 @@ public class AddressableLoad : SingletonMonoBehaviour<AddressableLoad>
 
         handles.Add(handle);
         yield return handle;
+
+        Stream stream = new MemoryStream(handle.Result.bytes);
+        
         
         Debug.Log("°á°ú°ª!!!!" + handle.Result.ToString());
     }
