@@ -33,28 +33,28 @@ public class UIStatController : MonoBehaviour
         {
             case UIManager.StatType.Attack:
                 levelText.text = SaveDatas.Data.stat.AttackLv.ToString();
-                statText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack.ToString();
-                costText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Cost.ToString("F2");
+                statText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackLv].Attack.ToString();
+                costText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackLv].Cost.ToString("F2");
                 break;
             case UIManager.StatType.Health:
                 levelText.text = SaveDatas.Data.stat.HealthLv.ToString();
-                statText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health.ToString();
-                costText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Cost.ToString("F2");
+                statText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.HealthLv].Health.ToString();
+                costText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.HealthLv].Cost.ToString("F2");
                 break;
             case UIManager.StatType.CriHit:
                 levelText.text = SaveDatas.Data.stat.CriticalHitLv.ToString();
-                statText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit.ToString() + " %";
-                costText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].Cost.ToString("F2");
+                statText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit.ToString() + " %";
+                costText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalHitLv].Cost.ToString("F2");
                 break;
             case UIManager.StatType.CriDmg:
                 levelText.text = SaveDatas.Data.stat.CriticalDamageLV.ToString();
-                statText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage.ToString();
-                costText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost.ToString("F2");
+                statText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage.ToString();
+                costText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost.ToString("F2");
                 break;
             case UIManager.StatType.AttackSpeed:
                 levelText.text = SaveDatas.Data.stat.AttackSpeedLv.ToString();
-                statText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed.ToString();
-                costText.text = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost.ToString("F2");
+                statText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed.ToString();
+                costText.text = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost.ToString("F2");
                 break;
 
         }

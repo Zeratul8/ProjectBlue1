@@ -16,6 +16,7 @@ public class StartUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         loginBtn.onClick.AddListener(login.LoginGPGS);
         exitBtn.onClick.AddListener(QuitGame);
     }

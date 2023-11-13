@@ -11,16 +11,16 @@ public static class PlayerStatus
     {
         DataManager.Instance.InitMonsterData();
         DataManager.Instance.InitPlayerData();
-        playerStat = DataManager.Instance.playerStats[0];
+        playerStat = DataManager.Instance.PlayerStats[0];
         playerHP = playerStat.Health;
     }
 
     public static void LoadStatus()
     {
-        playerStat.Attack = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack;
-        playerStat.Health = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health;
-        playerStat.CriticalHit = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
-        playerStat.CriticalDamage = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
-        playerStat.AttackSpeed = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
+        playerStat.Attack = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackLv].Attack;
+        playerStat.Health = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.HealthLv].Health;
+        playerStat.CriticalHit = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
+        playerStat.CriticalDamage = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
+        playerStat.AttackSpeed = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
     }
 }

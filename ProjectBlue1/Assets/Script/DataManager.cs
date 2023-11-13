@@ -1,4 +1,6 @@
+using Assets.HeroEditor.Common.Scripts.ExampleScripts;
 using GooglePlayGames.BasicApi;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,13 +14,11 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
     readonly string playerDataName = "PlayerStats";
     readonly string monsterDataName = "Assets/Excel/MonsterStats.csv";
     //readonly string test = "Assets/BalanceEditor/Data/BalanceData.csv";
-    Stream playerDataStream;
-    Stream monsterDataStream;
 
     List<AsyncOperationHandle> handles = new List<AsyncOperationHandle>();
 
 
-    public List<Status> playerStats { get; set; } = new List<Status>();
+    public List<Status> PlayerStats { get; set; } = new List<Status>();
     public List<Status> MonStats { get; set; } = new List<Status>();
 
     protected override void OnAwake()
@@ -44,7 +44,22 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
         handles.Add(handle);
         yield return handle;
 
-        playerDataStream = new MemoryStream(handle.Result.bytes);
+        var readData = BlueCSVReader.Read(handle.Result);
+
+        int readCount = readData.Count;
+        for(int i =0; i < readCount; i++)
+        {
+            Status status = new Status();
+            status.Attack = readData[i]["Attack"];
+            status.Health = readData[i]["Health"];
+            status.CriticalHit = readData[i]["CriticalHit"];
+            status.CriticalDamage = readData[i]["CriticalDamage"];
+            status.AttackSpeed = readData[i]["AttackSpeed"];
+            status.Cost = readData[i]["Cost"];
+
+            PlayerStats.Add(status);
+        }
+
         InitPlayerData();
     }
 
@@ -64,21 +79,47 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
         handles.Add(handle);
         yield return handle;
 
-        playerDataStream = new MemoryStream(handle.Result.bytes);
+        var readData = BlueCSVReader.Read(handle.Result);
+
+        int readCount = readData.Count;
+        for (int i = 0; i < readCount; i++)
+        {
+            Status status = new Status();
+            status.Attack = readData[i]["Attack"];
+            status.Health = readData[i]["Health"];
+            status.CriticalHit = readData[i]["CriticalHit"];
+            status.CriticalDamage = readData[i]["CriticalDamage"];
+            status.AttackSpeed = readData[i]["AttackSpeed"];
+            status.Cost = readData[i]["Cost"];
+
+            MonStats.Add(status);
+        }
+
         InitPlayerData();
     }
 
 
     public void InitMonsterData()
     {
-        ExcelParsing.ParseExcelStatData(monsterDataStream, MonStats);
+        //ExcelParsing.ParseExcelStatData(monsterDataStream, MonStats);
     }
     public void InitPlayerData()
     {
-        ExcelParsing.ParseExcelStatData(playerDataStream, playerStats);
+        //ExcelParsing.ParseExcelStatData(playerDataStream, playerStats);
     }
     void OnDestroy()
     {
         Addressables.Release(handles);
     }
+}
+
+[Serializable]
+public class Status
+{
+    public float Attack;
+    public float Health;
+    public float CriticalHit;
+    public float CriticalDamage;
+    public float AttackSpeed;
+    public float Cost;
 }

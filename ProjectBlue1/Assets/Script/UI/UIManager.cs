@@ -83,35 +83,35 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         switch (type)
         {
             case StatType.Attack:
-                if (SaveDatas.Data.etc.gold < DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Cost)
+                if (SaveDatas.Data.etc.gold < DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackLv].Cost)
                 {
                     NotEnoughGoldPopup();
                     return;
                 }
                 break;
             case StatType.Health:
-                if (SaveDatas.Data.etc.gold < DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Cost)
+                if (SaveDatas.Data.etc.gold < DataManager.Instance.PlayerStats[SaveDatas.Data.stat.HealthLv].Cost)
                 {
                     NotEnoughGoldPopup();
                     return;
                 }
                 break;
             case StatType.CriHit:
-                if (SaveDatas.Data.etc.gold < DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].Cost)
+                if (SaveDatas.Data.etc.gold < DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalHitLv].Cost)
                 {
                     NotEnoughGoldPopup();
                     return;
                 }
                 break;
             case StatType.CriDmg:
-                if (SaveDatas.Data.etc.gold < DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost)
+                if (SaveDatas.Data.etc.gold < DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost)
                 {
                     NotEnoughGoldPopup();
                     return;
                 }
                 break;
             case StatType.AttackSpeed:
-                if (SaveDatas.Data.etc.gold < DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost)
+                if (SaveDatas.Data.etc.gold < DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost)
                 {
                     NotEnoughGoldPopup();
                     return;
@@ -132,27 +132,27 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         switch(type)
         {
             case StatType.Attack:
-                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Cost;
+                SaveDatas.Data.etc.gold -= DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackLv].Cost;
                 SaveDatas.Data.stat.AttackLv++;
                 attackCtr.SetText();
                 break;
             case StatType.Health:
-                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Cost;
+                SaveDatas.Data.etc.gold -= DataManager.Instance.PlayerStats[SaveDatas.Data.stat.HealthLv].Cost;
                 SaveDatas.Data.stat.HealthLv++;
                 healthCtr.SetText();
                 break;
             case StatType.CriHit:
-                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].Cost;
+                SaveDatas.Data.etc.gold -= DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalHitLv].Cost;
                 SaveDatas.Data.stat.CriticalHitLv++;
                 criHitCtr.SetText();
                 break;
             case StatType.CriDmg:
-                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost;
+                SaveDatas.Data.etc.gold -= DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalDamageLV].Cost;
                 SaveDatas.Data.stat.CriticalDamageLV++;
                 criDmgCtr.SetText();
                 break;
             case StatType.AttackSpeed:
-                SaveDatas.Data.etc.gold -= DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost;
+                SaveDatas.Data.etc.gold -= DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackSpeedLv].Cost;
                 SaveDatas.Data.stat.AttackSpeedLv++;
                 attackSpeedCtr.SetText();
                 break;

@@ -26,11 +26,11 @@ public class PlayerBattleController : MonoBehaviour, IBattleController
 
     public void SetPlayerStat()
     {
-        PlayerStatus.playerStat.Attack = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackLv].Attack;
-        PlayerStatus.playerStat.Health = DataManager.Instance.playerStats[SaveDatas.Data.stat.HealthLv].Health;
-        PlayerStatus.playerStat.CriticalHit = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
-        PlayerStatus.playerStat.CriticalDamage = DataManager.Instance.playerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
-        PlayerStatus.playerStat.AttackSpeed = DataManager.Instance.playerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
+        PlayerStatus.playerStat.Attack = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackLv].Attack;
+        PlayerStatus.playerStat.Health = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.HealthLv].Health;
+        PlayerStatus.playerStat.CriticalHit = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalHitLv].CriticalHit;
+        PlayerStatus.playerStat.CriticalDamage = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.CriticalDamageLV].CriticalDamage;
+        PlayerStatus.playerStat.AttackSpeed = DataManager.Instance.PlayerStats[SaveDatas.Data.stat.AttackSpeedLv].AttackSpeed;
     }
 
     

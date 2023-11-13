@@ -383,7 +383,6 @@ GameObject:
   - component: {fileID: 114665035978887628}
   - component: {fileID: 114576218883810672}
   - component: {fileID: 1793250968589525374}
-  - component: {fileID: -6829234360345386450}
   - component: {fileID: 7032650265791795956}
   - component: {fileID: 5898102185863398400}
   m_Layer: 0
@@ -704,19 +703,6 @@ MonoBehaviour:
   - {fileID: 4526182659390974}
   - {fileID: 4526182659390974}
   Firearm: {fileID: 4298589388749716}
---- !u!114 &-6829234360345386450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109987028385428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9531c2ca7f124cd4396aa55f05200e94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHP: 0
 --- !u!114 &7032650265791795956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,7 +716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 0
-  stat: {fileID: -6829234360345386450}
   playerCtr: {fileID: 5898102185863398400}
   particleSystem: {fileID: 0}
   attackSpeedBar: {fileID: 6109531656214581506}
@@ -746,7 +731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce934016c7f0a649a902174d3926e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: -6829234360345386450}
   playerType: 0
 --- !u!1 &1148429847025930
 GameObject:
