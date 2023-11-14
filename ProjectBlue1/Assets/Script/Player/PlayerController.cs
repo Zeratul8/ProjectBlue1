@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     }
     public void DieAnimation()
     {
-        animCtr.Die_Animation();
+        //animCtr.Die_Animation();
     }
     public void ResetBattleCondition(PlayerType playerType)
     {

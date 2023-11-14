@@ -147,7 +147,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         //monster.DieAnimation();
         GetBattleRewards();
         playerBattle.EndBattlePlayer();
-        yield return new WaitForSeconds(2f);
+        yield return null;
         Debug.Log("!!!!!!!!!몬스터 게임오브젝트이름2 : " + monster.gameObject.name);
         player.ResetBattleCondition(player.playerType);
         SaveDatas.Data.etc.stage++;

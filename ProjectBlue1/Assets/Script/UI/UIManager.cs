@@ -42,7 +42,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
     protected override void OnStart()
     {
-        
+        InitUI();
     }
 
     private void Update()
@@ -55,13 +55,20 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 #endif
     }
 
+    void InitUI()
+    {
+        SetStateText();
+        SetGoldText();
+        SetCristalText();
+    }
+
     public void SetStateText()
     {
         stageText.text = SaveDatas.Data.etc.stage.ToString();
     }
     public void SetGoldText()
     {
-        goldText.text = SaveDatas.Data.etc.gold.ToString("F2");
+        goldText.text = SaveDatas.Data.etc.gold.ToString("F0");
     }
     public void SetCristalText()
     {
@@ -70,7 +77,8 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
     public void NotEnoughGoldPopup()
     {
-
+        PopUp.Instance.SetText(PopUp.PopUpType.oneBtn, "골드부족", "골드가 부족합니다!");
+        PopUp.Instance.SetOneButtonPopup(null);
     }
 
     public void ExitGamePopup()

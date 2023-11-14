@@ -109,7 +109,8 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
     }
     void OnDestroy()
     {
-        Addressables.Release(handles);
+        if(handles.Count > 0)
+            Addressables.Release(handles);
     }
 }
 
