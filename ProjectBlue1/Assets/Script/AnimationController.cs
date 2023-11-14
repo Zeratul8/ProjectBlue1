@@ -102,10 +102,10 @@ public class AnimationController : MonoBehaviour
         animator.SetBool("Action", false);
     }
 
-    public void Die_Animation()
+    /*public void Die_Animation()
     {
         animator.SetInteger("State", Random.Range(6, 8));
-    }
+    }*/
 
     public void StopWalk_Animation()
     {
