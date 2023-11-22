@@ -150,7 +150,10 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         yield return null;
         Debug.Log("!!!!!!!!!몬스터 게임오브젝트이름2 : " + monster.gameObject.name);
         player.ResetBattleCondition(player.playerType);
-        SaveDatas.Data.etc.stage++;
+
+        if(!UIManager.Instance.repeatMode)
+            SaveDatas.Data.etc.stage++;
+        SaveDatas.SetHighestStage();
         UIManager.Instance.SetStateText();
         MonsterPoolManager.Instance.SetMonster(monster);
         monster = null;

@@ -69,6 +69,13 @@ public static class SaveDatas
         string jsonStr = File.ReadAllText(savePath);
         Data = JsonUtility.FromJson<GameData>(jsonStr);
     }
+
+
+    public static void SetHighestStage()
+    {
+        if(Data.etc.stage > Data.etc.highestClearedStage)
+            Data.etc.highestClearedStage = Data.etc.stage;
+    }
 }
 [Serializable]
 public class GameData
@@ -91,6 +98,7 @@ public class StatLvData
 public class EtcData
 {
     public int stage;
+    public int highestClearedStage;
     public float gold;
     public int cristal;
     // 추가될 정보들은 아래로 적기

@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 0.1.231123
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -162,7 +162,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 2
+  AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 33
   AndroidPreferredInstallLocation: 1
@@ -250,7 +250,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: "F:/\uBE14\uB8E8\uB3C5 \uD0A4\uC2A4\uD1A0\uC5B4/\uBE14\uB8E8\uB3C5\uD0A4\uC2A4\uD1A0\uC5B4.keystore"
+  AndroidKeystoreName: F:/BlueDogKeystore/BlueDogKeystore.keystore
   AndroidKeyaliasName: "\uBC29\uCE58\uC6A9\uC0AC"
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

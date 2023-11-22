@@ -27,17 +27,10 @@ public class GoogleLogin : MonoBehaviour
         }
         else
         {
-            PopUp.Instance.SetText(PopUp.PopUpType.oneBtn, "로그인실패", "!!!!!!로그인실패!!!!!");
-#if UNITY_EDITOR
-            PopUp.Instance.SetOneButtonPopup(()=> SceneManager.LoadSceneAsync(1));
-#else
-            PopUp.Instance.SetOneButtonPopup(null);
-#endif
-            PopUp.Instance.OpenPopUp(PopUp.PopUpType.oneBtn);
-            /*
             if(reLogin == null)
                 reLogin = StartCoroutine(Coroutine_ReLogin());
-            */
+            else
+                Debug.Log("에러!!!" + status.ToString());
             // Disable your integration with Play Games Services or show a login button
             // to ask users to sign-in. Clicking it should call
             // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
@@ -54,6 +47,13 @@ public class GoogleLogin : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        Debug.Log("GPGS 로그인 실패!!!!!");
+
+        PopUp.Instance.SetText(PopUp.PopUpType.oneBtn, "로그인실패", "!!!!!!로그인실패!!!!!");
+#if UNITY_EDITOR
+        PopUp.Instance.SetOneButtonPopup(() => SceneManager.LoadSceneAsync(1));
+#else
+            PopUp.Instance.SetOneButtonPopup(null);
+#endif
+        PopUp.Instance.OpenPopUp(PopUp.PopUpType.oneBtn);
     }
 }

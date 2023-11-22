@@ -37,8 +37,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     [SerializeField]
     UIStatController attackSpeedCtr;
 
+    [SerializeField]
+    StageRepeat repeatStage;
 
 
+    public bool repeatMode { get { return repeatStage.GetRepeatMode(); } }
 
     protected override void OnStart()
     {

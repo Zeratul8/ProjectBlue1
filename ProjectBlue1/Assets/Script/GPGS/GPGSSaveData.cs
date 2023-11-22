@@ -12,7 +12,7 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
     public bool IsReady { get { return isReady; } }
     protected override void OnStart()
     {
-        //StartCoroutine(Coroutine_AutoSave());
+        StartCoroutine(Coroutine_AutoSave());
     }
 
     public ISavedGameClient SavedGame()
