@@ -50,12 +50,10 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
     private void Update()
     {
-#if UNITY_ANDROID
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             ExitGamePopup();
         }
-#endif
     }
 
     void InitUI()
@@ -87,6 +85,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     public void ExitGamePopup()
     {
         SaveDatas.Save();
+        Application.Quit();
     }
 
     public void CheckUpgrade(StatType type)
