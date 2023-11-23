@@ -153,6 +153,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
 
         if(!UIManager.Instance.repeatMode)
             SaveDatas.Data.etc.stage++;
+        SaveDatas.Data.etc.cristal += Random.Range(0, (int)(SaveDatas.Data.etc.stage / 100 + 1));
         SaveDatas.SetHighestStage();
         UIManager.Instance.SetStateText();
         MonsterPoolManager.Instance.SetMonster(monster);

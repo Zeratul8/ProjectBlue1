@@ -15,6 +15,7 @@ public class StageRepeat : MonoBehaviour
     {
         toggleColor = repeatToggle.GetComponent<Image>().color;
         repeatToggle.onValueChanged.AddListener(SetRepeatMode);
+        SetRepeatMode(repeatToggle.isOn);
     }
 
     void SetRepeatMode(bool isOn)
