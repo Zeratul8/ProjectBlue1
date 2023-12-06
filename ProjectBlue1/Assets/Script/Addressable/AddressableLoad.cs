@@ -25,10 +25,7 @@ public class AddressableLoad : SingletonMonoBehaviour<AddressableLoad>
     IEnumerator Addressable_LoadPlayerData()
     {
         var handle = Addressables.LoadAssetAsync<TextAsset>(playerDataName);
-        
 
-
-        //var handle = Addressables.InstantiateAsync(assetReference);
 
         handles.Add(handle);
         yield return handle;

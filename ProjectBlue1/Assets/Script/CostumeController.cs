@@ -33,8 +33,8 @@ public class CostumeController : MonoBehaviour
         costumeImg.sprite = sprite;
         costumePrice.text = price.ToString();
 
-        costumeBtn.onClick.AddListener(() => CostumeChange());
-        lockBtn.onClick.AddListener(() => CostumeBuy());
+        costumeBtn.onClick.AddListener(CostumeChange);
+        lockBtn.onClick.AddListener(CostumeBuy);
     }
     void CostumeBuy()
     {
@@ -48,5 +48,11 @@ public class CostumeController : MonoBehaviour
     {
         CostumeManager.Instance.SwordCostumeChange(sprite, possession);
     }
-    
+
+    private void OnDestroy()
+    {
+        costumeBtn.onClick.RemoveAllListeners();
+        lockBtn.onClick.RemoveAllListeners();
+    }
+
 }
