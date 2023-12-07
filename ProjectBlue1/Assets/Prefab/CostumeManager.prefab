@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5476754673211363283}
-  - component: {fileID: 5476754673211363282}
+  - component: {fileID: 3681805805965885913}
   m_Layer: 0
   m_Name: CostumeManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5476754673211363282
+--- !u!114 &3681805805965885913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5476754673211363285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d6e86ecea43e1489c416c581d10640, type: 3}
+  m_Script: {fileID: 11500000, guid: 861b1122c67e9c547846b4cba8d43c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacterBase: {fileID: 0}
+  creater: {fileID: 0}

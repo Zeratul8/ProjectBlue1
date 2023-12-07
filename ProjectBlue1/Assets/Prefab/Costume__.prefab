@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 939607918633513097}
   - component: {fileID: 8794369528690609792}
   m_Layer: 5
-  m_Name: IMG_LockPanel
+  m_Name: BTN_LockPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 7002997917518292845}
   - component: {fileID: 5383971085620882674}
   m_Layer: 5
-  m_Name: IMG_CostumeBG
+  m_Name: BTN_CostumeBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,8 +541,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7002997918724547305}
-  - component: {fileID: 3325298683361144878}
   - component: {fileID: 1195570870935072532}
+  - component: {fileID: 6884487738689142034}
   m_Layer: 5
   m_Name: Costume__
   m_TagString: Untagged
@@ -572,27 +572,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3325298683361144878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002997918724547304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5358645185bae4c9981dc8e0a78d8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cosName: BroadCurvedSword
-  sprite: {fileID: 21300000, guid: fcee714297c7423b99562fc209ce4f7e, type: 3}
-  price: 3
-  type: 1
-  possession: 0
-  costumeImg: {fileID: 7002997918219379179}
-  costumePrice: {fileID: 5746944256275082818}
-  costumeBtn: {fileID: 5383971085620882674}
-  lockBtn: {fileID: 8794369528690609792}
 --- !u!222 &1195570870935072532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -601,3 +580,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7002997918724547304}
   m_CullTransparentMesh: 1
+--- !u!114 &6884487738689142034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002997918724547304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2d3d97b5727d74daef0974bf03560c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  type: 0
+  possession: 0
+  costumeImg: {fileID: 7002997918219379179}
+  costumePrice: {fileID: 5746944256275082818}
+  costumeBtn: {fileID: 5383971085620882674}
+  lockBtn: {fileID: 8794369528690609792}

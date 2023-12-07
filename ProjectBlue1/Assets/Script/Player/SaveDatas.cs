@@ -82,6 +82,7 @@ public class GameData
 {
     public StatLvData stat = new StatLvData();
     public EtcData etc = new EtcData();
+    public CostumeData costume = new CostumeData();
 }
 [Serializable]
 public class StatLvData
@@ -102,4 +103,10 @@ public class EtcData
     public float gold;
     public int cristal;
     // 추가될 정보들은 아래로 적기
+}
+
+[Serializable]
+public class CostumeData
+{
+    public List<string> costumes = new List<string>();
 }

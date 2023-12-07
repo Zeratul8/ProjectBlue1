@@ -6,21 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CostumeController : MonoBehaviour
-{ 
-    public enum Type
-    {
-        None,
-        Sword,
-        Max
-    }
-    public string cosName;
-    public Sprite sprite;
+{
+
     public int price;
-    public Type type;
+    public CostumeType type;
     public bool possession;
 
     [SerializeField]
-    private Image costumeImg;
+    Image costumeImg;
     [SerializeField]
     private TextMeshProUGUI costumePrice;
     [SerializeField]
@@ -28,10 +21,16 @@ public class CostumeController : MonoBehaviour
     [SerializeField]
     private Button lockBtn;
 
+    public Image CostumeImg { get { return costumeImg; } }
+
     private void Start()
     {
-        costumeImg.sprite = sprite;
         costumePrice.text = price.ToString();
+        
+        if(possession)
+        {
+            lockBtn.gameObject.SetActive(false);
+        }
 
         costumeBtn.onClick.AddListener(CostumeChange);
         lockBtn.onClick.AddListener(CostumeBuy);
@@ -42,11 +41,13 @@ public class CostumeController : MonoBehaviour
         {
             possession = true;
             lockBtn.gameObject.SetActive(false);
+            SaveDatas.Data.costume.costumes.Add(costumeImg.sprite.name);
+            SaveDatas.Save();
         }
     }
     void CostumeChange()
     {
-        CostumeManager.Instance.SwordCostumeChange(sprite, possession);
+        CostumeManager.Instance.SwordCostumeChange(costumeImg.sprite, possession);
     }
 
     private void OnDestroy()

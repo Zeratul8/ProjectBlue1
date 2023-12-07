@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Runtime.Remoting.Messaging;
+using UnityEditor;
 
 public class UIManager : SingletonMonoBehaviour<UIManager>
 {
@@ -87,6 +88,12 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     public void ExitGamePopup()
     {
         SaveDatas.Save();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+
+#elif UNITY_ANDROID
+        Application.Quit();
+#endif
     }
 
     public void CheckUpgrade(StatType type)

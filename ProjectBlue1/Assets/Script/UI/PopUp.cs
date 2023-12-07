@@ -73,6 +73,9 @@ public class PopUp : SingletonMonoBehaviour<PopUp>
 
         // 패널 false, 현재 열린 팝업 false
         panelBtn.onClick.AddListener(()=> ClosePopUp());
+
+
+        oneBtn.onClick.AddListener(ClosePopUp);
         // '네' 를 클릭하면 isAccept = true
         twoAcceptBtn.onClick.AddListener(() => { ClosePopUp(); isAccept = true; });
         twoCancelBtn.onClick.AddListener(() => { ClosePopUp(); });

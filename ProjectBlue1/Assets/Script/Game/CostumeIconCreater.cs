@@ -12,35 +12,41 @@ public class CostumeIconCreater : MonoBehaviour
 
     [SerializeField]
     CostumeSO weaponData;
+
+    List<CostumeController> costumeControllers = new List<CostumeController>();
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+    public List<CostumeController> CreateIcons()
+    {
         int count = weaponData.sprites.Count;
         Debug.Log("ÄÜÅÙÃ÷ °¹¼ö : " + count);
-        for(int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
             GameObject icon = Instantiate(costumeSelector, scrollRect.content);
             Image[] images = icon.GetComponentsInChildren<Image>();
             Image iconImg = null;
-            foreach(Image image in images)
+            foreach (Image image in images)
             {
                 Debug.Log("ÀÌ¹ÌÁö ÀÌ¸§ : " + image.gameObject.name);
-                if(image.name.Equals("IMG_Costume"))
+                if (image.name.Equals("IMG_Costume"))
                 {
                     iconImg = image;
                     break;
                 }
             }
-            if(iconImg != null)
+            if (iconImg != null)
             {
                 iconImg.sprite = weaponData.sprites[i];
+                costumeControllers.Add(icon.GetComponent<CostumeController>());
             }
+            icon.SetActive(false);
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(costumeControllers.Count > 0)
+            return costumeControllers;
+        else return null;
     }
 }
