@@ -581,13 +581,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7002997918724547304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1530dd467473a7346be262b784377510, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c5358645185bae4c9981dc8e0a78d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosName: 
-  sprite: {fileID: 0}
-  price: 0
-  type: 0
+  cosName: BroadCurvedSword
+  sprite: {fileID: 21300000, guid: fcee714297c7423b99562fc209ce4f7e, type: 3}
+  price: 3
+  type: 1
   possession: 0
   costumeImg: {fileID: 7002997918219379179}
   costumePrice: {fileID: 5746944256275082818}
