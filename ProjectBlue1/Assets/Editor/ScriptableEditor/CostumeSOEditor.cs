@@ -36,7 +36,8 @@ public class CostumeSOEditor : Editor
 
         costumeSO.sprites = sprites;
 
-        costumeSO.SetDictionary();
+        costumeSO.SetDictionary();kfemt
+
 
         EditorUtility.SetDirty(costumeSO);
         

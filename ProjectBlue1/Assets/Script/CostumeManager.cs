@@ -17,8 +17,14 @@ public class CostumeManager : SingletonMonoBehaviour<CostumeManager>
     List<CostumeController> costumeControllers = new List<CostumeController>();
 
 
-    private void Start()
+    private IEnumerator Start()
     {
+        while (true)
+        {
+            if (creater.enabled)
+                break;
+            yield return null;
+        }
         costumeControllers = creater.CreateIcons();
         CheckCostumesHave();
         foreach (var controller in costumeControllers)

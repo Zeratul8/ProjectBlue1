@@ -8,20 +8,21 @@ public class CostumeIconCreater : MonoBehaviour
     [SerializeField]
     GameObject costumeSelector;
     [SerializeField]
-    ScrollRect scrollRect;
-
+    CostumeSO costumeData;
     [SerializeField]
-    CostumeSO weaponData;
+    ScrollRect scrollRect;
+    [SerializeField]
+    GridLayoutGroup layout;
 
     List<CostumeController> costumeControllers = new List<CostumeController>();
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
     public List<CostumeController> CreateIcons()
     {
-        int count = weaponData.sprites.Count;
+        if(scrollRect == null)
+            scrollRect = GetComponent<ScrollRect>();
+        if(layout == null)
+            layout = GetComponentInChildren<GridLayoutGroup>();
+        int count = costumeData.sprites.Count;
         Debug.Log("ÄÜÅÙÃ÷ °¹¼ö : " + count);
         for (int i = 0; i < count; i++)
         {
@@ -39,11 +40,16 @@ public class CostumeIconCreater : MonoBehaviour
             }
             if (iconImg != null)
             {
-                iconImg.sprite = weaponData.sprites[i];
+                iconImg.sprite = costumeData.sprites[i];
                 costumeControllers.Add(icon.GetComponent<CostumeController>());
             }
             icon.SetActive(false);
         }
+        
+        int contentRowCount = Mathf.RoundToInt(scrollRect.content.sizeDelta.x / layout.cellSize.x);
+        Debug.Log("»çÀÌÁî : " + scrollRect.content.sizeDelta.x);
+        Debug.Log("Ä«¿îÆ® °¹¼ö : " + contentRowCount);
+        scrollRect.content.sizeDelta += new Vector2(0, (count / contentRowCount) * 150 + (count / contentRowCount + 1) * 50);
 
         if(costumeControllers.Count > 0)
             return costumeControllers;
