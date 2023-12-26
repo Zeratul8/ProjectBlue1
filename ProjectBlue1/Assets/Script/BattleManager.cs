@@ -37,7 +37,11 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
 
     BattleState battleState = BattleState.InitBattle;
 
+    float[] cristalPriority = { 99, 0.4f, 0.3f, 0.2f, 0.1f };
+    float[] testCristalPriority = { 0, 25f, 25f, 25f, 25f };
+
     public bool isPlayerAttack = false;
+    
     protected override void OnAwake()
     {
         PlayGamesPlatform.Activate();
@@ -153,7 +157,7 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
 
         if(!UIManager.Instance.repeatMode)
             SaveDatas.Data.etc.stage++;
-        SaveDatas.Data.etc.cristal += Random.Range(0, (int)(SaveDatas.Data.etc.stage / 100 + 1));
+        
         SaveDatas.SetHighestStage();
         UIManager.Instance.SetStateText();
         MonsterPoolManager.Instance.SetMonster(monster);
@@ -165,6 +169,8 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
     {
         SaveDatas.Data.etc.gold += SaveDatas.Data.etc.stage;
         UIManager.Instance.SetGoldText();
+        GetCristal();
+        UIManager.Instance.SetCristalText();
     }
     void SetBattleMonster()
     {
@@ -175,6 +181,30 @@ public class BattleManager : SingletonMonoBehaviour<BattleManager>
         //monsterBattle.InitBattleMonster();
         monster.InitMonster();
         backGround.StartBackGroundScrolling();
+    }
+    void GetCristal()
+    {
+        int priority = Util.GetPriority(cristalPriority);
+        if (priority == 1)
+        {
+            SaveDatas.Data.etc.cristal += 1;
+        }
+        else if (priority == 2)
+        {
+            SaveDatas.Data.etc.cristal += 2;
+        }
+        else if (priority == 3)
+        {
+            SaveDatas.Data.etc.cristal += 3;
+        }
+        else if (priority == 4)
+        {
+            SaveDatas.Data.etc.cristal += 4;
+        }
+        else
+        {
+
+        }
     }
 
 

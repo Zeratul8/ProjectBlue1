@@ -25,7 +25,7 @@ public class CostumeController : MonoBehaviour
 
     private void Start()
     {
-        costumePrice.text = price.ToString();
+        costumePrice.text = Constants.weaponPrice.ToString();
         
         if(possession)
         {
@@ -37,7 +37,7 @@ public class CostumeController : MonoBehaviour
     }
     void CostumeBuy()
     {
-        if (CostumeManager.Instance.CostumeBuy(price))
+        if (CostumeManager.Instance.CostumeBuy(Constants.weaponPrice))
         {
             possession = true;
             lockBtn.gameObject.SetActive(false);

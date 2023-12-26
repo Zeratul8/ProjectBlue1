@@ -244,3 +244,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costumeSelector: {fileID: 7002997918724547304, guid: f2fb873de26d8be4d95bd47c7d8329a3, type: 3}
   costumeData: {fileID: 11400000, guid: 2a6f02b846cf6754dbf9e83637c8e193, type: 2}
+  scrollRect: {fileID: 737012353}
+  layout: {fileID: 76401626}

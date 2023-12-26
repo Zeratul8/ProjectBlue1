@@ -8,4 +8,5 @@ public static class Constants
     public static float monsterWalkDistance = 3.45f;
     public static float monsterWalkSpeed = 1f;
     public static float monsterHeight = 2.6f;
+    public static int weaponPrice = 200;
 }

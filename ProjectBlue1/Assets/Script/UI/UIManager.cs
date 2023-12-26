@@ -78,6 +78,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     {
         cristalText.text = SaveDatas.Data.etc.cristal.ToString();
     }
+    
+    public void ShowRewardCristal(int cristalReward)
+    {
+        PopUp.Instance.SetText(PopUp.PopUpType.oneBtn, "Å©¸®½ºÅ» È¹µæ", "Å©¸®½ºÅ»" + cristalReward.ToString() + "°³ È¹µæ!");
+    }
 
     public void NotEnoughGoldPopup()
     {

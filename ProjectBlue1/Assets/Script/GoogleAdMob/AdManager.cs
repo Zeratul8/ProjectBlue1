@@ -26,12 +26,6 @@ public class AdManager : SingletonMonoBehaviour<AdManager>
         CreateBannerView();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     /// <summary>
     /// Creates a 320x50 banner view at top of the screen.
@@ -116,7 +110,7 @@ public class AdManager : SingletonMonoBehaviour<AdManager>
             ShowRewardedAd();
     }
 
-    public void ShowRewardedAd()
+    void ShowRewardedAd()
     {
         const string rewardMsg =
         "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
@@ -126,7 +120,9 @@ public class AdManager : SingletonMonoBehaviour<AdManager>
             _rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
-                SaveDatas.Data.etc.cristal++;
+                int randCristal = UnityEngine.Random.Range(1, 11);
+                SaveDatas.Data.etc.cristal += randCristal;
+                UIManager.Instance.ShowRewardCristal(randCristal);
                 UIManager.Instance.SetCristalText();
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });

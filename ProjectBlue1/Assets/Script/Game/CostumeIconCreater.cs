@@ -45,11 +45,15 @@ public class CostumeIconCreater : MonoBehaviour
             }
             icon.SetActive(false);
         }
-        
+
+        ScrollViewSizeFitter.SetScrollViewSize(ref scrollRect, layout, count);
+
+        /*
         int contentRowCount = Mathf.RoundToInt(scrollRect.content.sizeDelta.x / layout.cellSize.x);
         Debug.Log("사이즈 : " + scrollRect.content.sizeDelta.x);
         Debug.Log("카운트 갯수 : " + contentRowCount);
         scrollRect.content.sizeDelta += new Vector2(0, (count / contentRowCount) * 150 + (count / contentRowCount + 1) * 50);
+        */
 
         if(costumeControllers.Count > 0)
             return costumeControllers;
