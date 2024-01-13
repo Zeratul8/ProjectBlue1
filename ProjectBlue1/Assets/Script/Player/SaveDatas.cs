@@ -13,34 +13,36 @@ public static class SaveDatas
 {
     static string savePath = Application.persistentDataPath + "/userSaveData.json";
     public static GameData Data = new GameData();
-    /*private void Start()
-    {
-        Data = new GameData();
-        stat = GetComponent<PlayerStatus>();
-        savePath = Application.persistentDataPath + "/userSaveData.json";
-        Load();
-    }*/
+
     public static void ReceiveData(int currentStage = 1, float currentGold = 0, int currentCristal = 0)
     {
         Data.etc.stage = currentStage;
         Data.etc.gold= currentGold;
         Data.etc.cristal= currentCristal;
     }
-    //서버 수동,자동세이브 넣을예정
-    //[ContextMenu("Save")]
 #if UNITY_EDITOR
     [MenuItem("Test/Save")]
 #endif
-    public static void Save()
+    public static void SaveServer()
     {
-        //게임데이터 여기다 불러와야함!
-
         // JSON 문자열로 변환
         string jsonStr = JsonUtility.ToJson(Data);
         // 세이브 경로로 JSON 파일 저장
         GPGSSaveData.Instance.SaveData(jsonStr);
+    }
+    public static void SaverServerAndQuit()
+    {
+        // JSON 문자열로 변환
+        string jsonStr = JsonUtility.ToJson(Data);
+        // 세이브 경로로 JSON 파일 저장
+        GPGSSaveData.Instance.SaveDataAndQuit(jsonStr);
+    }
+    public static void SaveLocal()
+    {
+        // JSON 문자열로 변환
+        string jsonStr = JsonUtility.ToJson(Data);
+        // 세이브 경로로 JSON 파일 저장
         File.WriteAllText(savePath, jsonStr);
-        Debug.Log("데이터 저장에 성공하였습니다!!!!");
     }
     //[ContextMenu("Load")]
     public static void Load(string jsonData)
@@ -62,7 +64,7 @@ public static class SaveDatas
         {
             PlayerStatus.InitFirstStats();
             ReceiveData();
-            Save();
+            SaveServer();
             Debug.Log("세이브 파일이 없어, 새로 만들고 초기값을 설정했습니다!!!!");
             return;
         }

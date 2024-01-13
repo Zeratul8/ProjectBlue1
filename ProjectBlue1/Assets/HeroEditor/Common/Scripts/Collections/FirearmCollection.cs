@@ -17,7 +17,7 @@ namespace Assets.HeroEditor.Common.Scripts.Collections
 
 		public static Dictionary<string, FirearmCollection> Instances = new Dictionary<string, FirearmCollection>();
 
-		[RuntimeInitializeOnLoadMethod]
+		//[RuntimeInitializeOnLoadMethod]
 		private static void Initialize()
 		{
 			Instances = Resources.LoadAll<FirearmCollection>("").ToDictionary(i => i.Id, i => i);

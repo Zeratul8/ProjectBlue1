@@ -14,6 +14,10 @@ public class AdManager : SingletonMonoBehaviour<AdManager>
     BannerView _bannerView;
     RewardedAd _rewardedAd;
 
+    bool isClickRewardAds;
+
+    public bool IsClickRewardAds { get; }
+
     // Start is called before the first frame update
     protected override void OnStart()
     {
@@ -66,8 +70,12 @@ public class AdManager : SingletonMonoBehaviour<AdManager>
     /// <summary>
     /// Loads the rewarded ad.
     /// </summary>
-    public void LoadRewardedAd()
+    public void LoadCristalRewardedAd(Button rewardBtn)
     {
+        if (isClickRewardAds)
+            return;
+        isClickRewardAds = true;
+        rewardBtn.enabled = false;
 #if UNITY_ANDROID
         string _adUnitId = "ca-app-pub-4686950845662491/2374605298";
 #elif UNITY_IPHONE
@@ -107,10 +115,12 @@ public class AdManager : SingletonMonoBehaviour<AdManager>
                 _rewardedAd = ad;
             });
         if (_rewardedAd != null)
-            ShowRewardedAd();
+            ShowCristalRewardedAd();
+        isClickRewardAds = false;
+        rewardBtn.enabled = true;
     }
 
-    void ShowRewardedAd()
+    void ShowCristalRewardedAd()
     {
         const string rewardMsg =
         "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";

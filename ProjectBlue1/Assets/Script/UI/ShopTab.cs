@@ -18,9 +18,9 @@ public class ShopTab : MonoBehaviour
     {
         layoutGroup = scrollRect.content.GetComponent<GridLayoutGroup>();
         int contentsCount = scrollRect.content.childCount;
-        ScrollViewSizeFitter.SetScrollViewSize(ref scrollRect, layoutGroup, contentsCount);
+        //ScrollViewSizeFitter.SetScrollViewSize(ref scrollRect, layoutGroup, contentsCount);
 
-        rewardAdBtn.onClick.AddListener(AdManager.Instance.LoadRewardedAd);
+        rewardAdBtn.onClick.AddListener(()=>AdManager.Instance.LoadCristalRewardedAd(rewardAdBtn));
     }
 
 }

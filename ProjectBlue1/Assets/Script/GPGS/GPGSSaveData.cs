@@ -33,6 +33,30 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
                 }    
             });
     }
+
+    public void SaveDataAndQuit(string jsonData)
+    {
+        SavedGame().OpenWithAutomaticConflictResolution("UserSaveData", DataSource.ReadCacheOrNetwork,
+            ConflictResolutionStrategy.UseLastKnownGood, (status, data) =>
+            {
+                if (status == SavedGameRequestStatus.Success)
+                {
+                    var update = new SavedGameMetadataUpdate.Builder().Build();
+                    byte[] bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
+                    SavedGame().CommitUpdate(data, update, bytes, SaveCloudData);
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+
+#elif UNITY_ANDROID
+        Application.Quit();
+#endif
+                }
+                else
+                {
+                    //저장실패팝업
+                }
+            });
+    }
     void SaveCloudData(SavedGameRequestStatus status, ISavedGameMetadata data)
     {
         if (status == SavedGameRequestStatus.Success)
@@ -101,7 +125,7 @@ public class GPGSSaveData : SingletonMonoBehaviour<GPGSSaveData>
             if(time > 60)
             {
                 time = 0f;
-                SaveDatas.Save();
+                SaveDatas.SaveServer();
             }
         }
     }

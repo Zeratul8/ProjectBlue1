@@ -46,7 +46,7 @@ public class CostumeIconCreater : MonoBehaviour
             icon.SetActive(false);
         }
 
-        ScrollViewSizeFitter.SetScrollViewSize(ref scrollRect, layout, count);
+        //ScrollViewSizeFitter.SetScrollViewSize(ref scrollRect, layout, count);
 
         /*
         int contentRowCount = Mathf.RoundToInt(scrollRect.content.sizeDelta.x / layout.cellSize.x);

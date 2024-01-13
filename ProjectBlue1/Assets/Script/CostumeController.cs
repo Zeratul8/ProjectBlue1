@@ -42,7 +42,7 @@ public class CostumeController : MonoBehaviour
             possession = true;
             lockBtn.gameObject.SetActive(false);
             SaveDatas.Data.costume.costumes.Add(costumeImg.sprite.name);
-            SaveDatas.Save();
+            SaveDatas.SaveServer();
         }
     }
     void CostumeChange()

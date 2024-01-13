@@ -92,13 +92,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
     public void ExitGamePopup()
     {
-        SaveDatas.Save();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-
-#elif UNITY_ANDROID
-        Application.Quit();
-#endif
+        SaveDatas.SaverServerAndQuit();
     }
 
     public void CheckUpgrade(StatType type)
